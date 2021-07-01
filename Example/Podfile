@@ -1,0 +1,34 @@
+platform :ios, '12.0'
+use_frameworks!
+install! 'cocoapods', :generate_multiple_pod_projects => true, :incremental_installation => true
+
+source 'https://cdn.cocoapods.org/'
+source 'https://github.com/PhonePe/CustomPods.git'
+
+target 'BGFramework_Example' do
+
+  pod 'BGFramework', :path => '../BGFramework.podspec', :subspecs => [
+  'Core',
+  'PhonePeSpecific'
+  ]
+  
+  pod 'ConfigCore', :path => '../../ConfigCore/ConfigCore.podspec'
+  pod 'ConfigManager', :path => '../../ConfigManager/ConfigManager.podspec'
+  pod 'ChimeraCore', :path => '../../ChimeraCore/ChimeraCore.podspec'
+  pod 'CommonCodeUtility', :path => '../../CommonCodeUtility/CommonCodeUtility.podspec'
+  pod 'Bembala', :path => '../../Bembala/Bembala.podspec', :subspecs => [
+  'Core',
+  'AppSpecific'
+  ]
+  pod 'NetworkClient', :path => '../../NetworkClient/NetworkClient.podspec'
+  
+  pod 'SDWebImage', '~>4.4.7'
+  pod 'SwiftMessages', '~> 7.0.1'
+  
+  target 'BGFramework_Tests' do
+    inherit! :search_paths
+
+    pod 'Senpai', :path => '../../Senpai/Senpai.podspec'
+  end
+
+end
