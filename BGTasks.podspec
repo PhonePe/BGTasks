@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'BGTasks'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.summary          = 'A wrapper over iOS provided BackgroundTasks framework to ensure smooth onboarding of usecases and handle all the complex functionalities of BackgroundTasks within it.'
   s.homepage         = 'https://github.com/PhonePe/BGTasks'
