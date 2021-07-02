@@ -12,8 +12,11 @@ public protocol BGSyncItemRegistrationDataProtocol: AnyObject {
 }
 
 public protocol BGSyncRegistrationProtocol: BGSyncItemRegistrationDataProtocol {
+    @available(iOS 13.0, *)
     func registerSyncItem(_ data: BGSyncRegistrationData)
+    @available(iOS 13.0, *)
     func unRegisterSyncItem(_ identifier: String)
+    @available(iOS 13.0, *)
     func resetAllSyncItems()
 }
 

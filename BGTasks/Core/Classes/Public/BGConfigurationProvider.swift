@@ -17,6 +17,7 @@ protocol BGConfigurationProvidable {
 }
 
 final public class BGConfigurationProvider: BGConfigurationProvidable {
+    
     public static let shared = BGConfigurationProvider()
     
     public var registrationData: RegistrationData? {
@@ -27,6 +28,7 @@ final public class BGConfigurationProvider: BGConfigurationProvidable {
         return (configuration[.scheduleSettings] as? ScheduleSettings) ?? ScheduleSettings(enable: false)
     }
     
+    @available(iOS 13.0, *)
     public func configure(config: BGConfigurationProtocol) {
         switch config.configurationType {
         case .registrationData:
