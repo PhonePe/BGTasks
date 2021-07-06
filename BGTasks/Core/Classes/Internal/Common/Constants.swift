@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Constants {
+public struct Constants {
     
-    enum BGTaskType: CustomStringConvertible {
+    public enum BGTaskType: CustomStringConvertible {
         case apprefresh
         case processing
         
-        var description: String {
+        public var description: String {
             switch self {
             case .apprefresh:
                 return "apprefresh"

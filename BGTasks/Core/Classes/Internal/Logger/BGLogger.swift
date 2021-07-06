@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol BGLogger {
+public protocol BGLogger {
     func taskRegistered(withIdentifier identifier: String)
     func failedToRegister(withIdentifier identifier: String)
     
@@ -22,17 +22,17 @@ protocol BGLogger {
     func syncEnded(forUsecaseIdentifier identifier: String, result: UsecaseSyncResult, inBGTask taskData: BGTaskData)
 }
 
-struct BGTaskData: CustomStringConvertible {
-    let taskUniqueId: String
-    let identifier: String
-    let taskType: Constants.BGTaskType
+public struct BGTaskData: CustomStringConvertible {
+    public let taskUniqueId: String
+    public let identifier: String
+    public let taskType: Constants.BGTaskType
     
-    var description: String {
+    public var description: String {
         return "BGTask(taskUniqueId: \(taskUniqueId), identifier: \(identifier), taskType: \(taskType))"
     }
 }
 
-struct UsecaseSyncResult {
-    let status: Bool
-    let timeTakenDuration: TimeInterval
+public struct UsecaseSyncResult {
+    public let status: Bool
+    public let timeTakenDuration: TimeInterval
 }

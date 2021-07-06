@@ -12,7 +12,6 @@ import Quick
 @testable import BGTasks
 import BackgroundTasks
 
-@available(iOS 13.0, *)
 class TaskSchedulerTests: QuickSpec {
     
     override func spec() {

@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class BGLoggerManager {
+final public class BGLoggerManager {
     
-    static let shared = BGLoggerManager()
+    public static let shared = BGLoggerManager()
     
-    func register(logger: BGLogger) {
+    public func register(logger: BGLogger) {
         if allowMultipleLoggers {
             self.loggers.append(logger)
         } else {
@@ -30,58 +30,57 @@ final class BGLoggerManager {
 }
 
 extension BGLoggerManager: BGLogger {
-    func taskRegistered(withIdentifier identifier: String) {
+    public func taskRegistered(withIdentifier identifier: String) {
         loggers.forEach {
             $0.taskRegistered(withIdentifier: identifier)
         }
     }
     
-    func failedToRegister(withIdentifier identifier: String) {
+    public func failedToRegister(withIdentifier identifier: String) {
         loggers.forEach {
             $0.failedToRegister(withIdentifier: identifier)
         }
     }
     
-    func taskScheduled(withIdentifier identifier: String) {
+    public func taskScheduled(withIdentifier identifier: String) {
         loggers.forEach {
             $0.taskScheduled(withIdentifier: identifier)
         }
     }
     
-    func failedToScheduleTask(withIdentifier identifier: String) {
+    public func failedToScheduleTask(withIdentifier identifier: String) {
         loggers.forEach {
             $0.failedToScheduleTask(withIdentifier: identifier)
         }
     }
     
-    func backgroundTaskLaunched(for taskData: BGTaskData) {
+    public func backgroundTaskLaunched(for taskData: BGTaskData) {
         loggers.forEach {
             $0.backgroundTaskLaunched(for: taskData)
         }
     }
     
-    func expirationHandler(for taskData: BGTaskData) {
+    public func expirationHandler(for taskData: BGTaskData) {
         loggers.forEach {
             $0.expirationHandler(for: taskData)
         }
     }
     
-    func taskCompleted(for taskData: BGTaskData, timeTakenDuration: TimeInterval) {
+    public func taskCompleted(for taskData: BGTaskData, timeTakenDuration: TimeInterval) {
         loggers.forEach {
             $0.taskCompleted(for: taskData, timeTakenDuration: timeTakenDuration)
         }
     }
     
-    func syncBegan(forUsecaseIdentifier identifier: String, inBGTask taskData: BGTaskData) {
+    public func syncBegan(forUsecaseIdentifier identifier: String, inBGTask taskData: BGTaskData) {
         loggers.forEach {
             $0.syncBegan(forUsecaseIdentifier: identifier, inBGTask: taskData)
         }
     }
     
-    func syncEnded(forUsecaseIdentifier identifier: String, result: UsecaseSyncResult, inBGTask taskData: BGTaskData) {
+    public func syncEnded(forUsecaseIdentifier identifier: String, result: UsecaseSyncResult, inBGTask taskData: BGTaskData) {
         loggers.forEach {
             $0.syncEnded(forUsecaseIdentifier: identifier, result: result, inBGTask: taskData)
         }
     }
-    
 }
