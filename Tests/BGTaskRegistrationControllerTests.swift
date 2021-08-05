@@ -325,7 +325,8 @@ extension BGTaskRegistrationControllerTests {
         
         let registeredUsecases: [BGSyncRegistrationData]
         
-        required init(registeredUsecases: [BGSyncRegistrationData]) {
+        required init(registeredUsecases: [BGSyncRegistrationData],
+                      bgRefreshStatusAvailability: BGRefreshStatusAvailability.Type) {
             self.registeredUsecases = registeredUsecases
         }
     }

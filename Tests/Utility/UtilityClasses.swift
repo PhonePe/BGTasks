@@ -79,9 +79,12 @@ class TestBGTaskOrchestrator: BGTaskOrchestratorProtocol {
     }
     
     let registeredUsecases: [BGSyncRegistrationData]
+    let bgRefreshStatusAvailability: BGRefreshStatusAvailability.Type
     
-    required init(registeredUsecases: [BGSyncRegistrationData]) {
+    required init(registeredUsecases: [BGSyncRegistrationData],
+                  bgRefreshStatusAvailability: BGRefreshStatusAvailability.Type) {
         self.registeredUsecases = registeredUsecases
+        self.bgRefreshStatusAvailability = bgRefreshStatusAvailability
     }
 }
 

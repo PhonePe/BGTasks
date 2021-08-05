@@ -8,11 +8,19 @@
 import Foundation
 
 protocol BGTaskOrchestratorProtocol {
-    init(registeredUsecases: [BGSyncRegistrationData])
+    init(registeredUsecases: [BGSyncRegistrationData],
+         bgRefreshStatusAvailability: BGRefreshStatusAvailability.Type)
     
     func canSchedule(for type: BGTaskSchedulerType, identifier: String, bundle: BundleHelper.Type) -> Bool
     
     static func canRegisterTask(identifier: String, bundle: BundleHelper.Type) -> Bool
+}
+
+extension BGTaskOrchestratorProtocol {
+    init(registeredUsecases: [BGSyncRegistrationData]) {
+        self.init(registeredUsecases: registeredUsecases,
+                  bgRefreshStatusAvailability: AppBGRefreshStatusAvailability.self)
+    }
 }
 
 extension BGTaskOrchestratorProtocol {
@@ -27,11 +35,17 @@ extension BGTaskOrchestratorProtocol {
 
 final class BGTaskOrchestrator: BGTaskOrchestratorProtocol {
     
-    required init(registeredUsecases: [BGSyncRegistrationData]) {
+    required init(registeredUsecases: [BGSyncRegistrationData],
+                  bgRefreshStatusAvailability: BGRefreshStatusAvailability.Type) {
         self.registeredUsecases = registeredUsecases
+        self.bgRefreshStatusAvailability = bgRefreshStatusAvailability
     }
     
     func canSchedule(for type: BGTaskSchedulerType, identifier: String, bundle: BundleHelper.Type) -> Bool {
+        guard bgRefreshStatusAvailability.isAvailable else {
+            return false
+        }
+        
         guard Self.canRegisterTask(identifier: identifier, bundle: bundle) else {
             return false
         }
@@ -46,6 +60,7 @@ final class BGTaskOrchestrator: BGTaskOrchestratorProtocol {
     }
     
     private let registeredUsecases: [BGSyncRegistrationData]
+    private let bgRefreshStatusAvailability: BGRefreshStatusAvailability.Type
 }
 
 protocol BundleHelper {
@@ -57,7 +72,17 @@ enum MainBundleHelper: BundleHelper {
         guard let identifiers = Bundle.main.object(forInfoDictionaryKey: "BGTaskSchedulerPermittedIdentifiers") as? [String] else {
             return []
         }
-        
         return identifiers
+    }
+}
+
+
+protocol BGRefreshStatusAvailability {
+    static var isAvailable: Bool { get }
+}
+
+enum AppBGRefreshStatusAvailability: BGRefreshStatusAvailability {
+    static var isAvailable: Bool {
+        return UIApplication.shared.backgroundRefreshStatus == .available
     }
 }
