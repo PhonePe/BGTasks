@@ -83,6 +83,28 @@ protocol BGRefreshStatusAvailability {
 
 enum AppBGRefreshStatusAvailability: BGRefreshStatusAvailability {
     static var isAvailable: Bool {
-        return UIApplication.shared.backgroundRefreshStatus == .available
+        
+        let status: UIBackgroundRefreshStatus = performOnMainThreadIfPossible(perform: UIApplication.shared.backgroundRefreshStatus)
+        
+        return status == .available
     }
+}
+
+func performOnMainThreadIfPossible<T>(perform: @escaping @autoclosure () -> T,
+                                      timeout: Double = 1) -> T {
+    let tokenRefreshSemaphore = DispatchSemaphore(value: 0)
+    
+    var value: T!
+    DispatchQueue.main.async {
+        value = perform()
+        tokenRefreshSemaphore.signal()
+    }
+    
+    _ = tokenRefreshSemaphore.wait(timeout: .now() + timeout)
+    
+    if value == nil {
+        value = perform()
+    }
+    
+    return value
 }

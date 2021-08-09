@@ -37,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let config = BGConfigurationProvider.RegistrationData(permittedIdentifiers: permittedIdentifiers)
             BGConfigurationProvider.shared.configure(config: config)
+            
+            BGConfigurationProvider.shared.configure(config: BGConfigurationProvider.ScheduleSettings(enable: true))
         }
         
         return true
