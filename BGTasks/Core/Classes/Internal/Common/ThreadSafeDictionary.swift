@@ -25,7 +25,7 @@ final class ThreadSafeDictionary<Key: Hashable, Value> {
             return value
         }
         set {
-            queue.async(flags: .barrier) {
+            queue.sync(flags: .barrier) {
                 self.update(key, value: newValue)
             }
         }
