@@ -11,7 +11,7 @@ import CoreData
 
 protocol BGTaskProcessControllerProtocol {
     init(categories: [Constants.TaskCategory],
-         registeredUsecases: [BGSyncRegistrationData],
+         registrationDataController: BGSyncItemRegistrationDataProtocol,
          configuration: BGConfigurationProvider.RegistrationData,
          moc: NSManagedObjectContext,
          logger: BGLogger,
@@ -24,14 +24,14 @@ protocol BGTaskProcessControllerProtocol {
 final class BGTaskProcessController: BGTaskProcessControllerProtocol {
     
     init(categories: [Constants.TaskCategory],
-         registeredUsecases: [BGSyncRegistrationData],
+         registrationDataController: BGSyncItemRegistrationDataProtocol,
          configuration: BGConfigurationProvider.RegistrationData,
          moc: NSManagedObjectContext,
          logger: BGLogger,
          taskData: BGTaskData) {
         
         self.categories = categories
-        self.registeredUsecases = registeredUsecases
+        self.registrationDataController = registrationDataController
         self.configuration = configuration
         self.moc = moc
         self.logger = logger
@@ -39,7 +39,7 @@ final class BGTaskProcessController: BGTaskProcessControllerProtocol {
     }
     
     private let categories: [Constants.TaskCategory]
-    private let registeredUsecases: [BGSyncRegistrationData]
+    private let registrationDataController: BGSyncItemRegistrationDataProtocol
     private let configuration: BGConfigurationProvider.RegistrationData
     private let moc: NSManagedObjectContext
     private let logger: BGLogger
@@ -67,7 +67,7 @@ extension BGTaskProcessController {
             return
         }
         
-        let priorityQueue = PriorityQueue(registedItems: self.registeredUsecases, moc: self.moc)
+        let priorityQueue = PriorityQueue(registedItems: self.registrationDataController.registeredUsecases, moc: self.moc)
         self.tasksWithPriority = priorityQueue.getTasks(categories: categories)
         
         guard !self.tasksWithPriority.isEmpty else {

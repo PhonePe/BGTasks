@@ -25,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             self.window?.makeKeyAndVisible()
             return true
+        } else {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.tintColor = UIColor.purple
+            
+            self.window?.rootViewController = ViewController()
+            
+            self.window?.makeKeyAndVisible()
         }
         
         if #available(iOS 13.0, *) {

@@ -14,6 +14,15 @@ protocol BGFrameworkCentralManagerProtocol {
     func scheduleRequiredTasks()
 }
 
+struct BGTaskWrapperDebgu: BGTaskWrapperProtocol {
+    var identifier: String
+    
+    var expirationHandler: (() -> Void)?
+    
+    func setTaskCompleted(success: Bool) {
+    }
+}
+
 class BGFrameworkCentralManager: BGFrameworkCentralManagerProtocol {
     
     init(registrationDataController: BGSyncItemRegistrationDataProtocol,
@@ -89,10 +98,6 @@ extension BGFrameworkCentralManager {
     }
     
     private func bgTaskHandler(task: BGTaskWrapperProtocol) {
-        guard configurationProvidable.scheduleSettings.enable else {
-            task.setTaskCompleted(success: false)
-            return
-        }
         
         guard let registrationData = self.configurationProvidable.registrationData else {
             assertionFailure("Registration data not found")
@@ -125,6 +130,7 @@ extension BGFrameworkCentralManager {
     
     private func process(categories: [Constants.TaskCategory], task: BGTaskWrapperProtocol, taskData: BGTaskData) {
         var bgTask = task
+        var isTaskFinished = false
         
         debugLog("Task: \(bgTask.identifier) began")
         
@@ -139,13 +145,14 @@ extension BGFrameworkCentralManager {
         let startTime = Date()
         
         let processController = bgTaskProcessControllerType.init(categories: categories,
-                                                                 registeredUsecases: registrationDataController.registeredUsecases,
+                                                                 registrationDataController: registrationDataController,
                                                                  configuration: configuration,
                                                                  moc: moc,
                                                                  logger: self.logger,
                                                                  taskData: taskData)
         
         func setTaskCompleted(logger: BGLogger?) {
+            isTaskFinished = true
             let timeTakenDuration = Date().timeIntervalSince(startTime)
             logger?.taskCompleted(for: taskData, timeTakenDuration: timeTakenDuration)
             bgTask.setTaskCompleted(success: true)
@@ -156,6 +163,26 @@ extension BGFrameworkCentralManager {
             debugLog("ExpirationHandler for Task: \(bgTask.identifier)")
             processController.stopProcessing()
             setTaskCompleted(logger: self?.logger)
+        }
+        
+        if configurationProvidable.scheduleSettings.enable == false ||
+            registrationDataController.registeredUsecases.isEmpty {
+            //This is the waiting mechanism for allowing the usecases to get registered and allowing the app to enable settings
+            let dispatchSemaphore = DispatchSemaphore(value: 0)
+            
+            _ = dispatchSemaphore.wait(timeout: .now() + configuration.minWaitingPeriodForRegistration)
+        }
+        
+        guard !isTaskFinished else {
+            //Task has been completed already. So need to perform anything and no need to call setTaskCompleted method.
+            //This case can occur only due to the above Semaphore blocking case.
+            return
+        }
+        
+        guard configurationProvidable.scheduleSettings.enable,
+              !registrationDataController.registeredUsecases.isEmpty else {
+            setTaskCompleted(logger: self.logger)
+            return
         }
         
         processController.process { [weak self] in

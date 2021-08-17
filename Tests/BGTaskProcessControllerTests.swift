@@ -29,7 +29,7 @@ class BGTaskProcessControllerTests: QuickSpec {
                 waitUntil(timeout: testTimeout) { done in
                     let configuration = BGConfigurationProvider.RegistrationData(permittedIdentifiers: [BGTaskSchedulerType.appRefreshTask: "com.phonepe"])
                     self.taskProcessController = BGTaskProcessController(categories: [.connectivityTasks, .withoutConnectivityTasks],
-                                                                         registeredUsecases: [],
+                                                                         registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: []),
                                                                          configuration: configuration,
                                                                          moc: self.coreDataManager.newBackgroundContext,
                                                                          logger: BGLoggerManager.shared,
@@ -59,7 +59,7 @@ class BGTaskProcessControllerTests: QuickSpec {
                     
                     let configuration = BGConfigurationProvider.RegistrationData(permittedIdentifiers: [BGTaskSchedulerType.appRefreshTask: "com.phonepe"])
                     self.taskProcessController = BGTaskProcessController(categories: [],
-                                                                         registeredUsecases: registeredUsecases,
+                                                                         registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: registeredUsecases),
                                                                          configuration: configuration,
                                                                          moc: self.coreDataManager.newBackgroundContext,
                                                                          logger: BGLoggerManager.shared,
@@ -79,7 +79,7 @@ class BGTaskProcessControllerTests: QuickSpec {
                 waitUntil(timeout: testTimeout) { done in
                     let configuration = BGConfigurationProvider.RegistrationData(permittedIdentifiers: [BGTaskSchedulerType.appRefreshTask: "com.phonepe"])
                     self.taskProcessController = BGTaskProcessController(categories: [],
-                                                                         registeredUsecases: [],
+                                                                         registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: []),
                                                                          configuration: configuration,
                                                                          moc: self.coreDataManager.newBackgroundContext,
                                                                          logger: BGLoggerManager.shared,
@@ -109,7 +109,7 @@ class BGTaskProcessControllerTests: QuickSpec {
                     
                     let configuration = BGConfigurationProvider.RegistrationData(permittedIdentifiers: [BGTaskSchedulerType.appRefreshTask: "com.phonepe"])
                     self.taskProcessController = BGTaskProcessController(categories: [.connectivityTasks],
-                                                                         registeredUsecases: registeredUsecases,
+                                                                         registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: registeredUsecases),
                                                                          configuration: configuration,
                                                                          moc: self.coreDataManager.newBackgroundContext,
                                                                          logger: BGLoggerManager.shared,
@@ -142,7 +142,7 @@ class BGTaskProcessControllerTests: QuickSpec {
                     
                     let configuration = BGConfigurationProvider.RegistrationData(permittedIdentifiers: [BGTaskSchedulerType.appRefreshTask: "com.phonepe"])
                     self.taskProcessController = BGTaskProcessController(categories: [.connectivityTasks],
-                                                                         registeredUsecases: registeredUsecases,
+                                                                         registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: registeredUsecases),
                                                                          configuration: configuration,
                                                                          moc: self.coreDataManager.newBackgroundContext,
                                                                          logger: BGLoggerManager.shared,
@@ -188,7 +188,7 @@ class BGTaskProcessControllerTests: QuickSpec {
                     
                     let configuration = BGConfigurationProvider.RegistrationData(permittedIdentifiers: [BGTaskSchedulerType.appRefreshTask: "com.phonepe"])
                     self.taskProcessController = BGTaskProcessController(categories: [.connectivityTasks],
-                                                                         registeredUsecases: registeredUsecases,
+                                                                         registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: registeredUsecases),
                                                                          configuration: configuration,
                                                                          moc: self.coreDataManager.newBackgroundContext,
                                                                          logger: BGLoggerManager.shared,
@@ -237,7 +237,7 @@ class BGTaskProcessControllerTests: QuickSpec {
                     
                     let configuration = BGConfigurationProvider.RegistrationData(permittedIdentifiers: [BGTaskSchedulerType.appRefreshTask: "com.phonepe"])
                     self.taskProcessController = BGTaskProcessController(categories: [.withoutConnectivityTasks],
-                                                                         registeredUsecases: registeredUsecases,
+                                                                         registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: registeredUsecases),
                                                                          configuration: configuration,
                                                                          moc: self.coreDataManager.newBackgroundContext,
                                                                          logger: BGLoggerManager.shared,
@@ -286,7 +286,7 @@ class BGTaskProcessControllerTests: QuickSpec {
                     
                     let configuration = BGConfigurationProvider.RegistrationData(permittedIdentifiers: [BGTaskSchedulerType.appRefreshTask: "com.phonepe"])
                     self.taskProcessController = BGTaskProcessController(categories: [.connectivityTasks, .withoutConnectivityTasks],
-                                                                         registeredUsecases: registeredUsecases,
+                                                                         registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: registeredUsecases),
                                                                          configuration: configuration,
                                                                          moc: self.coreDataManager.newBackgroundContext,
                                                                          logger: BGLoggerManager.shared,

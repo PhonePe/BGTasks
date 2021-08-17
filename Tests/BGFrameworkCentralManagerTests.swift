@@ -1,5 +1,5 @@
 //
-//  BGTaskRegistrationControllerTests.swift
+//  BGFrameworkCentralManagerTests.swift
 //  BGFramework_Tests
 //
 //  Created by Shridhara V on 20/05/21.
@@ -13,7 +13,7 @@ import Quick
 import BackgroundTasks
 import CoreData
 
-class BGTaskRegistrationControllerTests: QuickSpec {
+class BGFrameworkCentralManagerTests: QuickSpec {
     
     override func spec() {
         guard #available(iOS 13.0, *) else {
@@ -50,7 +50,7 @@ class BGTaskRegistrationControllerTests: QuickSpec {
 }
 
 // MARK: - registerBGTasks method tests
-extension BGTaskRegistrationControllerTests {
+extension BGFrameworkCentralManagerTests {
     private func registrationTest() {
         context("registerBGTasks method tests") {
 
@@ -129,7 +129,7 @@ extension BGTaskRegistrationControllerTests {
 }
 
 // MARK: - taskHandler method tests
-extension BGTaskRegistrationControllerTests {
+extension BGFrameworkCentralManagerTests {
     
     private func taskHandlerTests() {
         context("taskHandler method tests") {
@@ -164,15 +164,22 @@ extension BGTaskRegistrationControllerTests {
     }
     
     private func testTaskExpiry(scheduletype: BGTaskSchedulerType,
-                                expectedCategoriesToProcess: [Constants.TaskCategory]) {
+                                expectedCategoriesToProcess: [Constants.TaskCategory],
+                                function: StaticString = #function,
+                                line: UInt = #line) {
+        let description = testFunctionDescription(function: function, line: line)
+        
         waitUntil(timeout: testTimeout) { done in
             let taskId = "com.phonepe.\(scheduletype)"
             
             let configurationProvider = TestBGConfigurationProvider(registrationData: BGConfigurationProvider.RegistrationData(permittedIdentifiers: [scheduletype: taskId]))
             TestBGTaskOrchestrator.canRegisterTask = true
             
+            let syncItem1 = BGSyncRegistrationData(identifier: "id_1") { compl in
+                compl(true)
+            }
             _ = BGFrameworkCentralManager(
-                registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: []),
+                registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: [syncItem1]),
                 configurationProvidable: configurationProvider,
                 moc: self.coreDataManager.newBackgroundContext,
                 bgTaskScheduleWrapper: TestBGTaskSchedulerWrapper.self,
@@ -193,7 +200,7 @@ extension BGTaskRegistrationControllerTests {
             expecting(TestBGTaskProcessController.initCalled).to(equal(true))
             expecting(TestBGTaskProcessController.initMethodCategories).to(equal(expectedCategoriesToProcess))
             expecting(TestBGTask.didExpirationHandlerSet).to(equal(true))
-            expecting(TestBGTaskProcessController.processMethodCalled).to(equal(true))
+            expecting(TestBGTaskProcessController.processMethodCalled).to(equal(true), description: description)
             
             performWith(delay: 4) {
                 expecting(TestBGTaskProcessController.stopProcessingMethodCalled).to(equal(true))
@@ -233,8 +240,11 @@ extension BGTaskRegistrationControllerTests {
             let configurationProvider = TestBGConfigurationProvider(registrationData: BGConfigurationProvider.RegistrationData(permittedIdentifiers: [scheduletype: taskId]))
             TestBGTaskOrchestrator.canRegisterTask = true
             
+            let syncItem1 = BGSyncRegistrationData(identifier: "id_1") { compl in
+                compl(true)
+            }
             _ = BGFrameworkCentralManager(
-                registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: []),
+                registrationDataController: TestBGSyncItemRegistrationData(registeredUsecases: [syncItem1]),
                 configurationProvidable: configurationProvider,
                 moc: self.coreDataManager.newBackgroundContext,
                 bgTaskScheduleWrapper: TestBGTaskSchedulerWrapper.self,
@@ -270,7 +280,7 @@ extension BGTaskRegistrationControllerTests {
 }
 
 // MARK: - appDidEnterBackground tests
-extension BGTaskRegistrationControllerTests {
+extension BGFrameworkCentralManagerTests {
     private func appDidEnterBackgroundTest() {
         it("scheduleRequiredTasks method tests") {
             waitUntil(timeout: testTimeout) { done in
@@ -299,14 +309,7 @@ extension BGTaskRegistrationControllerTests {
     }
 }
 
-extension BGTaskRegistrationControllerTests {
-    class TestBGSyncItemRegistrationData: BGSyncItemRegistrationDataProtocol {
-        var registeredUsecases: [BGSyncRegistrationData]
-        
-        init(registeredUsecases: [BGSyncRegistrationData]) {
-            self.registeredUsecases = registeredUsecases
-        }
-    }
+extension BGFrameworkCentralManagerTests {
     
     class TestBGTaskOrchestrator: BGTaskOrchestratorProtocol {
         static func resetTestData() {
@@ -357,7 +360,7 @@ extension BGTaskRegistrationControllerTests {
     class TestBGTaskProcessController: BGTaskProcessControllerProtocol {
         
         required init(categories: [Constants.TaskCategory],
-                      registeredUsecases: [BGSyncRegistrationData],
+                      registrationDataController: BGSyncItemRegistrationDataProtocol,
                       configuration: BGConfigurationProvider.RegistrationData,
                       moc: NSManagedObjectContext,
                       logger: BGLogger,

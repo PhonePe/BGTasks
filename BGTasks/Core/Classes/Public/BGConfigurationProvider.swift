@@ -61,19 +61,42 @@ extension BGConfigurationProvider {
         public let appRefreshTaskScheduleInterval: TimeInterval //Default 2hrs
         public let historyDataTTLInDays: Int //Default 7 days
         public let maxConcurrentSyncCount: Int //Default 4
+        public let minWaitingPeriodForRegistration: TimeInterval //Default 5
         
         public init(permittedIdentifiers: [BGTaskSchedulerType: String],
                     processingTaskScheduleInterval: TimeInterval? = nil,
                     appRefreshTaskScheduleInterval: TimeInterval? = nil,
                     timeToLiveHistoryData: Int? = nil,
-                    maxConcurrentSyncCount: Int? = nil) {
+                    maxConcurrentSyncCount: Int? = nil,
+                    minWaitingPeriodForRegistration: TimeInterval? = nil) {
             
             self.permittedIdentifiers = permittedIdentifiers
             
-            self.processingTaskScheduleInterval = processingTaskScheduleInterval ?? (2 * 60 * 60)
-            self.appRefreshTaskScheduleInterval = appRefreshTaskScheduleInterval ?? (2 * 60 * 60)
-            self.historyDataTTLInDays = timeToLiveHistoryData ?? 7
-            self.maxConcurrentSyncCount = maxConcurrentSyncCount ?? 4
+            self.processingTaskScheduleInterval = processingTaskScheduleInterval ?? Self.defaultProcessingTaskScheduleInterval
+            self.appRefreshTaskScheduleInterval = appRefreshTaskScheduleInterval ?? Self.defaultAppRefreshTaskScheduleInterval
+            self.historyDataTTLInDays = timeToLiveHistoryData ?? Self.defaultTimeToLiveHistoryData
+            self.maxConcurrentSyncCount = maxConcurrentSyncCount ?? Self.defaultMaxConcurrentSyncCount
+            self.minWaitingPeriodForRegistration = minWaitingPeriodForRegistration ?? Self.defaultMinWaitingPeriodForRegistration
+        }
+        
+        static var defaultProcessingTaskScheduleInterval: TimeInterval {
+            return 2 * 60 * 60
+        }
+        
+        static var defaultAppRefreshTaskScheduleInterval: TimeInterval {
+            return 2 * 60 * 60
+        }
+        
+        static var defaultTimeToLiveHistoryData: Int {
+            return 7
+        }
+        
+        static var defaultMaxConcurrentSyncCount: Int {
+            return 4
+        }
+        
+        static var defaultMinWaitingPeriodForRegistration: TimeInterval {
+            return 5
         }
     }
     

@@ -128,3 +128,16 @@ class TestBGProcessingTask: TestBGTask, BGProcessingTaskWrapperProtocol {
 
 class TestBGAppRefreshTask: TestBGTask, BGAppRefreshTaskWrapperProtocol {
 }
+
+class TestBGSyncItemRegistrationData: BGSyncItemRegistrationDataProtocol {
+    var registeredUsecases: [BGSyncRegistrationData]
+    
+    init(registeredUsecases: [BGSyncRegistrationData]) {
+        self.registeredUsecases = registeredUsecases
+    }
+}
+
+func testFunctionDescription(function: StaticString,
+                             line: UInt) -> String {
+    return "function: \(function), line: \(line)"
+}
