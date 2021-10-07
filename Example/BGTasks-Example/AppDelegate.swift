@@ -8,6 +8,7 @@
 import UIKit
 import BGTasks
 import Foundation
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -48,6 +49,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             BGConfigurationProvider.shared.configure(config: BGConfigurationProvider.ScheduleSettings(enable: true))
         }
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
+        }
+        
+        application.registerForRemoteNotifications()
+        
         return true
     }
     
@@ -74,4 +80,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register for remote notification: \(error.localizedDescription)")
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("didReceiveRemoteNotification. userInfo: \(userInfo)")
+        
+        let silentPN = BGTaskForSilentPN()
+        BGConfigurationProvider.shared.silentPNReceived(task: silentPN)
+        
+        DispatchQueue.global().asyncAfter(deadline: .now() + 4) {
+            silentPN.expirationHandler?()
+            completionHandler(.newData)
+        }
+    }
+    
 }

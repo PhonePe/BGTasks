@@ -65,6 +65,8 @@ class TestBGTaskSchedulerWrapper: BGTaskSchedulerWrapperProtocol {
             launchHandlers[identifier]?(TestBGAppRefreshTask(identifier: identifier, callExpiration: delay))
         case .processing:
             launchHandlers[identifier]?(TestBGProcessingTask(identifier: identifier, callExpiration: delay))
+        case .silentPN:
+            launchHandlers[identifier]?(BGTaskForSilentPN())
         }
     }
 }

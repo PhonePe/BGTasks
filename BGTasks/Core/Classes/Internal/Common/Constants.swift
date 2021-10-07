@@ -12,6 +12,7 @@ public struct Constants {
     public enum BGTaskType: CustomStringConvertible {
         case apprefresh
         case processing
+        case silentPN
         
         public var description: String {
             switch self {
@@ -19,11 +20,13 @@ public struct Constants {
                 return "apprefresh"
             case .processing:
                 return  "processing"
+            case .silentPN:
+                return "silentPN"
             }
         }
     }
     
-    enum TaskCategory {
+    enum TaskCategory: CaseIterable {
         case connectivityTasks
         case withoutConnectivityTasks
     }

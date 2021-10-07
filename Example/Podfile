@@ -6,6 +6,7 @@ target 'BGTasks-Example' do
   use_frameworks!
 
   # Pods for BGTasks-Example
+#  pod 'BGTasks', '1.0.3'
 #  pod 'BGTasks', :git => 'https://github.com/PhonePe/BGTasks'
   pod 'BGTasks', :path => '../BGTasks.podspec'
 

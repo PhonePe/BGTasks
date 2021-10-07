@@ -12,15 +12,7 @@ import UIKit
 
 protocol BGFrameworkCentralManagerProtocol {
     func scheduleRequiredTasks()
-}
-
-struct BGTaskWrapperDebgu: BGTaskWrapperProtocol {
-    var identifier: String
-    
-    var expirationHandler: (() -> Void)?
-    
-    func setTaskCompleted(success: Bool) {
-    }
+    func performSilentPN(task: BGTaskWrapperProtocol, taskData: BGTaskData)
 }
 
 class BGFrameworkCentralManager: BGFrameworkCentralManagerProtocol {
@@ -59,6 +51,10 @@ class BGFrameworkCentralManager: BGFrameworkCentralManagerProtocol {
         scheduleObj.scheduleRequiredTasks {
             debugLog("Scheduled tasks")
         }
+    }
+    
+    func performSilentPN(task: BGTaskWrapperProtocol, taskData: BGTaskData) {
+        process(categories: Constants.TaskCategory.allCases, task: task, taskData: taskData)
     }
     
     private let registrationDataController: BGSyncItemRegistrationDataProtocol
@@ -114,14 +110,12 @@ extension BGFrameworkCentralManager {
         let taskUniqueId = UUID().uuidString
         let taskData = BGTaskData(taskUniqueId: taskUniqueId, identifier: task.identifier, taskType: type.taskType)
         
-        self.logger.backgroundTaskLaunched(for: taskData)
-        
         switch type {
         case .appRefreshTask,
              .processingTaskWithConnectivityWithExternalPower,
              .processingTaskWithConnectivityWithoutExternalPower:
             //All applicable but withoutConnectivityTasks are low priority.
-            process(categories: [.connectivityTasks, .withoutConnectivityTasks], task: task, taskData: taskData)
+            process(categories: Constants.TaskCategory.allCases, task: task, taskData: taskData)
         case .processingTaskWithoutConnectivity:
             //only no connectivity tasks applicable
             process(categories: [.withoutConnectivityTasks], task: task, taskData: taskData)
@@ -132,8 +126,6 @@ extension BGFrameworkCentralManager {
         var bgTask = task
         var isTaskFinished = false
         
-        debugLog("Task: \(bgTask.identifier) began")
-        
         scheduleRequiredTasks()
         
         guard let configuration = configurationProvidable.registrationData else {
@@ -141,6 +133,8 @@ extension BGFrameworkCentralManager {
             bgTask.setTaskCompleted(success: true)
             return
         }
+        
+        self.logger.backgroundTaskLaunched(for: taskData)
         
         let startTime = Date()
         
@@ -160,7 +154,6 @@ extension BGFrameworkCentralManager {
         
         bgTask.expirationHandler = { [weak self] in
             self?.logger.expirationHandler(for: taskData)
-            debugLog("ExpirationHandler for Task: \(bgTask.identifier)")
             processController.stopProcessing()
             setTaskCompleted(logger: self?.logger)
         }
@@ -186,7 +179,6 @@ extension BGFrameworkCentralManager {
         }
         
         processController.process { [weak self] in
-            debugLog("Completed Task: \(bgTask.identifier)")
             setTaskCompleted(logger: self?.logger)
         }
     }

@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         self.sync1 = Sync1Handler()
         self.sync2 = Sync2Handler()
         
-        for i in 3..<8 {
+        for i in 3..<10 {
             arraySyncs.append(GenericSyncHandler(identifier: "id_\(i)", duration: TimeInterval(5), requiresNetworkConnectivity: true))
         }
         

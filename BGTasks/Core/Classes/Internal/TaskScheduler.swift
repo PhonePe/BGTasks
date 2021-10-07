@@ -85,6 +85,9 @@ extension TaskScheduler {
                 }
                 
                 submitRequest(processingTask)
+            case .silentPN:
+                assertionFailure("Not a valid type to schedule")
+                break
             }
         }
     }

@@ -38,6 +38,13 @@ final public class BGConfigurationProvider: BGConfigurationProvidable {
         }
     }
     
+    public func silentPNReceived(task: BGTaskForSilentPN) {
+        let taskUniqueId = UUID().uuidString
+        let taskData = BGTaskData(taskUniqueId: taskUniqueId, identifier: task.identifier, taskType: .silentPN)
+        
+        self.centralManager?.performSilentPN(task: task, taskData: taskData)
+    }
+    
     private init() {
     }
     

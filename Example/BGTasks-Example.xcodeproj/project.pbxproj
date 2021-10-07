@@ -48,6 +48,7 @@
 		793E1C95F2CA04ECFAD38B1D /* Pods-BGTasks-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-Example.release.xcconfig"; path = "Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example.release.xcconfig"; sourceTree = "<group>"; };
 		90A75CAB90C82922D934209A /* Pods-BGTasks-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-ExampleTests.release.xcconfig"; path = "Target Support Files/Pods-BGTasks-ExampleTests/Pods-BGTasks-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1A67CBE4480494997C5C996 /* Pods_BGTasks_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGTasks_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3009619270F051B0099C8A0 /* BGTasks-Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BGTasks-Example.entitlements"; sourceTree = "<group>"; };
 		B315285B268F06E30086095A /* BGTasks-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BGTasks-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315285E268F06E30086095A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3152862268F06E30086095A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		B315285D268F06E30086095A /* BGTasks-Example */ = {
 			isa = PBXGroup;
 			children = (
+				B3009619270F051B0099C8A0 /* BGTasks-Example.entitlements */,
 				B31528AA268F09130086095A /* GenericSyncHandler.swift */,
 				B31528AC268F09130086095A /* Sync1Handler.swift */,
 				B31528AB268F09130086095A /* Sync2Handler.swift */,
@@ -555,6 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BGTasks-Example/BGTasks-Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9GW78CXC2W;
 				INFOPLIST_FILE = "BGTasks-Example/Info.plist";
@@ -562,7 +565,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shridhar.BGTasks-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = com.phonepe.PhonePeAppStage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -575,6 +578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BGTasks-Example/BGTasks-Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9GW78CXC2W;
 				INFOPLIST_FILE = "BGTasks-Example/Info.plist";
@@ -582,7 +586,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shridhar.BGTasks-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = com.phonepe.PhonePeAppStage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
