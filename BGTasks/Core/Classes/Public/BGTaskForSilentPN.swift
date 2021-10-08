@@ -14,6 +14,7 @@ public class BGTaskForSilentPN: BGTaskWrapperProtocol {
     let identifier = "com.silent.pn"
     
     func setTaskCompleted(success: Bool) {
+        expirationHandler = nil
     }
     
     public init() {
