@@ -94,11 +94,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("didReceiveRemoteNotification. userInfo: \(userInfo)")
         
-        let silentPN = BGTaskForSilentPN()
-        BGConfigurationProvider.shared.silentPNReceived(task: silentPN)
+        var silentPNBGTask: BGTaskForSilentPN?
+        if application.applicationState == .background {
+            let bgTask = BGTaskForSilentPN()
+            BGConfigurationProvider.shared.silentPNReceived(task: bgTask)
+            silentPNBGTask = bgTask
+        }
+        
         
         DispatchQueue.global().asyncAfter(deadline: .now() + 4) {
-            silentPN.expirationHandler?()
+            silentPNBGTask?.expirationHandler?()
             completionHandler(.newData)
         }
     }
