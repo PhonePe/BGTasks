@@ -100,6 +100,7 @@ extension BGTaskProcessController {
         self.completion = nil
         
         self.keyValueObs?.invalidate()
+        self.keyValueObs = nil //otherwise app crashes incase this method gets called twice
         
         //cancelling and suspending so that pending tasks won't resume.
         operationQueue.cancelAllOperations()
