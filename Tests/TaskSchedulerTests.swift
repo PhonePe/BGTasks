@@ -38,7 +38,9 @@ class TaskSchedulerTests: QuickSpec {
                         taskScheduler.scheduleRequiredTasks {
                         }
                     }
+#if arch(x86_64)
                     expect(expression).to(throwAssertion())
+#endif
                 }
                 
                 it("pendingTaskRequests is empty") {

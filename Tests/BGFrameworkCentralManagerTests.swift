@@ -67,7 +67,9 @@ extension BGFrameworkCentralManagerTests {
                         notificationCenter: self.mockNotificationCenter
                     )
                 }
+#if arch(x86_64)
                 expecting(expression: expression).to(throwAssertion())
+#endif
             }
             
             it("without permittedIdentifiers") {
@@ -104,7 +106,9 @@ extension BGFrameworkCentralManagerTests {
                     )
                 }
                 
+#if arch(x86_64)
                 expecting(expression: expression).to(throwAssertion())
+#endif
             }
             
             it("with permittedIdentifiers and orchestrator.canRegisterTask is true") {
@@ -175,7 +179,7 @@ extension BGFrameworkCentralManagerTests {
             let configurationProvider = TestBGConfigurationProvider(registrationData: BGConfigurationProvider.RegistrationData(permittedIdentifiers: [scheduletype: taskId]))
             TestBGTaskOrchestrator.canRegisterTask = true
             
-            let syncItem1 = BGSyncRegistrationData(identifier: "id_1") { compl in
+            let syncItem1 = BGSyncRegistrationData(identifier: "id_1", configuration: .init(strategy: .everyTime)) { compl in
                 compl(true)
             }
             _ = BGFrameworkCentralManager(
@@ -240,7 +244,7 @@ extension BGFrameworkCentralManagerTests {
             let configurationProvider = TestBGConfigurationProvider(registrationData: BGConfigurationProvider.RegistrationData(permittedIdentifiers: [scheduletype: taskId]))
             TestBGTaskOrchestrator.canRegisterTask = true
             
-            let syncItem1 = BGSyncRegistrationData(identifier: "id_1") { compl in
+            let syncItem1 = BGSyncRegistrationData(identifier: "id_1", configuration: .init(strategy: .everyTime)) { compl in
                 compl(true)
             }
             _ = BGFrameworkCentralManager(

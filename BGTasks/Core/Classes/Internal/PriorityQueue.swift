@@ -20,35 +20,46 @@ class PriorityQueue {
     }
     
     func getTasks(categories: [Constants.TaskCategory]) -> [BGSyncRegistrationData] {
+        guard !self.registedItems.isEmpty else {
+            return []
+        }
         
         var prioritySyncItems = [BGSyncRegistrationData]()
         
         moc.performAndWait {
             
             for category in categories {
-            
                 let categoryItems = registedItems.filter { $0.configuration.requiresNetworkConnectivity == category.requiresNetworkConnectivity }
-                let categoryItemIdentifiers = categoryItems.map { $0.identifier }
-                
-                var dbSyncItems = CDSyncItemUtil.getObjects(for: categoryItemIdentifiers, moc: moc)
-                dbSyncItems.forEach { debugLog("identifier: \(String(describing: $0.identifier)), lastSyncTime: \($0.lastSyncTime)") }
-                
-                dbSyncItems.sort { $0.lastSyncTime < $1.lastSyncTime }
-                debugLog("After sort")
-                dbSyncItems.forEach { debugLog("identifier: \(String(describing: $0.identifier)), lastSyncTime: \($0.lastSyncTime)") }
-                
-                let sortedRegisteredItems = self.registedItems.filter { registeredSyncItem in
-                    return dbSyncItems.contains(where: { $0.identifier == registeredSyncItem.identifier })
+                guard !categoryItems.isEmpty else {
+                    continue
                 }
                 
-                sortedRegisteredItems.forEach { debugLog("\($0)") }
-                prioritySyncItems.append(contentsOf: sortedRegisteredItems)
+                var dbSyncItems = CDSyncItemUtil.getObjects(for: categoryItems, moc: moc)
+
+#if DEBUG
+                dbSyncItems.forEach { debugLog("identifier: \(String(describing: $0.cdSyncItem.identifier)), lastSyncTime: \($0.cdSyncItem.lastSyncTime)") }
+#endif
+                
+                dbSyncItems = dbSyncItems.filter {
+                    return $0.registrationData.configuration.strategy.isItEligible(lastSyncTime: TimeInterval($0.cdSyncItem.lastSyncTime))
+                }
+                
+                dbSyncItems = dbSyncItems.sorted {
+                    return $0.cdSyncItem.lastSyncTime < $1.cdSyncItem.lastSyncTime
+                }
+                
+#if DEBUG
+                debugLog("After filter & sort")
+                dbSyncItems.forEach { debugLog("identifier: \(String(describing: $0.cdSyncItem.identifier)), lastSyncTime: \($0.cdSyncItem.lastSyncTime)") }
+#endif
+                
+                
+                prioritySyncItems.append(contentsOf: dbSyncItems.map { $0.registrationData })
             }
         }
         
         return prioritySyncItems
     }
-    
     
     private let registedItems: [BGSyncRegistrationData]
     private let moc: NSManagedObjectContext

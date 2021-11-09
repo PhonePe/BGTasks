@@ -29,7 +29,7 @@ public struct BGSyncRegistrationData {
     public let handler: LaunchHandler
     
     public init(identifier: String,
-                configuration: Configuration = .init(),
+                configuration: Configuration,
                 handler: @escaping LaunchHandler) {
         self.identifier = identifier
         self.configuration = configuration
@@ -40,13 +40,17 @@ public struct BGSyncRegistrationData {
         public let strategy: Strategy
         public let requiresNetworkConnectivity: Bool
         
-        public init(strategy: Strategy = .everyTime, requiresNetworkConnectivity: Bool = true) {
+        public init(strategy: Strategy, requiresNetworkConnectivity: Bool = true) {
             self.strategy = strategy
             self.requiresNetworkConnectivity = requiresNetworkConnectivity
         }
         
-        public enum Strategy: String, Decodable {
+        public enum Strategy: String, CaseIterable {
             case everyTime
+            case onceADayAnyTime
+            case every4Hours
+            case every12Hours
+            case every24Hours
         }
     }
 }

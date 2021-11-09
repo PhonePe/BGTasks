@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		274E3BB6E2DC6BC7A8D6DCA2 /* Pods_BGTasks_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A67CBE4480494997C5C996 /* Pods_BGTasks_Example.framework */; };
 		97EA924D7884EC6509DFAF7E /* Pods_BGTasks_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F26BC5FBACA8163A7601E4 /* Pods_BGTasks_ExampleTests.framework */; };
+		B30BC38627393B970052805C /* PriorityQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30BC38527393B970052805C /* PriorityQueueTest.swift */; };
 		B315285F268F06E30086095A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315285E268F06E30086095A /* AppDelegate.swift */; };
 		B3152863268F06E30086095A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3152862268F06E30086095A /* ViewController.swift */; };
 		B3152866268F06E30086095A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3152864268F06E30086095A /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		B31528E5268F0AF60086095A /* UtilityClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D9268F0AF60086095A /* UtilityClasses.swift */; };
 		B31528E6268F0AF60086095A /* SenpaiExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DA268F0AF60086095A /* SenpaiExpectation.swift */; };
 		B31528E7268F0AF60086095A /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DB268F0AF60086095A /* MockNotificationCenter.swift */; };
+		B38CDC282731415D007C6B2F /* StrategyEligibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CDC272731415D007C6B2F /* StrategyEligibilityTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		90A75CAB90C82922D934209A /* Pods-BGTasks-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-ExampleTests.release.xcconfig"; path = "Target Support Files/Pods-BGTasks-ExampleTests/Pods-BGTasks-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1A67CBE4480494997C5C996 /* Pods_BGTasks_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGTasks_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3009619270F051B0099C8A0 /* BGTasks-Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BGTasks-Example.entitlements"; sourceTree = "<group>"; };
+		B30BC38527393B970052805C /* PriorityQueueTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueueTest.swift; sourceTree = "<group>"; };
 		B315285B268F06E30086095A /* BGTasks-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BGTasks-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315285E268F06E30086095A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3152862268F06E30086095A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		B31528D9268F0AF60086095A /* UtilityClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityClasses.swift; sourceTree = "<group>"; };
 		B31528DA268F0AF60086095A /* SenpaiExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenpaiExpectation.swift; sourceTree = "<group>"; };
 		B31528DB268F0AF60086095A /* MockNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNotificationCenter.swift; sourceTree = "<group>"; };
+		B38CDC272731415D007C6B2F /* StrategyEligibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyEligibilityTests.swift; sourceTree = "<group>"; };
 		D0F26BC5FBACA8163A7601E4 /* Pods_BGTasks_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGTasks_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -170,10 +174,12 @@
 				B31528CF268F0AF60086095A /* BGSyncItemRegistrationControllerTest.swift */,
 				B31528D0268F0AF60086095A /* TestLogger.swift */,
 				B31528D1268F0AF60086095A /* BGTaskProcessControllerTests.swift */,
+				B30BC38527393B970052805C /* PriorityQueueTest.swift */,
 				B31528D2268F0AF60086095A /* CDHistoryUtilTests.swift */,
 				B31528D3268F0AF60086095A /* BGTaskOrchestratorTests.swift */,
 				B31528D4268F0AF60086095A /* BGFrameworkCentralManagerTests.swift */,
 				B31528D5268F0AF60086095A /* TaskSchedulerTests.swift */,
+				B38CDC272731415D007C6B2F /* StrategyEligibilityTests.swift */,
 				B31528D6268F0AF60086095A /* Utility */,
 			);
 			name = Tests;
@@ -391,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B31528E1268F0AF60086095A /* BGFrameworkCentralManagerTests.swift in Sources */,
+				B38CDC282731415D007C6B2F /* StrategyEligibilityTests.swift in Sources */,
 				B31528E7268F0AF60086095A /* MockNotificationCenter.swift in Sources */,
 				B31528E4268F0AF60086095A /* MockCoreDataManager.swift in Sources */,
 				B31528DC268F0AF60086095A /* BGSyncItemRegistrationControllerTest.swift in Sources */,
@@ -400,6 +407,7 @@
 				B31528E5268F0AF60086095A /* UtilityClasses.swift in Sources */,
 				B31528E3268F0AF60086095A /* Nimble_DSL.swift in Sources */,
 				B31528E2268F0AF60086095A /* TaskSchedulerTests.swift in Sources */,
+				B30BC38627393B970052805C /* PriorityQueueTest.swift in Sources */,
 				B31528DD268F0AF60086095A /* TestLogger.swift in Sources */,
 				B31528DE268F0AF60086095A /* BGTaskProcessControllerTests.swift in Sources */,
 			);

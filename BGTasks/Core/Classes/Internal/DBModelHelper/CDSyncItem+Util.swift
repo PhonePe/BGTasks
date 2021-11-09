@@ -10,10 +10,11 @@ import CoreData
 
 final class CDSyncItemUtil {
     
-    static func getObjects(for identifiers: [String], moc: NSManagedObjectContext) -> [CDSyncItem] {
+    static func getObjects(for registeredItems: [BGSyncRegistrationData], moc: NSManagedObjectContext) -> [UsecaseData] {
         return moc.performAndWaitAndReturn {
-            let syncItems = identifiers.map {
-                return findOrCreate(for: $0, moc: moc, saveIfNeeded: false)
+            let syncItems: [UsecaseData] = registeredItems.map {
+                let cdSyncItem = findOrCreate(for: $0.identifier, moc: moc, saveIfNeeded: false)
+                return UsecaseData(registrationData: $0, cdSyncItem: cdSyncItem)
             }
             
             do {
@@ -40,17 +41,6 @@ final class CDSyncItemUtil {
             return item
         }
     }
-    
-//    static func updateLastSyncTime(for identifiers: [String], moc: NSManagedObjectContext) {
-//        moc.performAndWait {
-//            let objects = getObjects(for: identifiers, moc: moc)
-//            objects.forEach {
-//                $0.updateLastSyncTime()
-//            }
-//            try? moc.saveIfNeeded()
-//        }
-//        
-//    }
 }
 
 extension CDSyncItem {
@@ -58,4 +48,9 @@ extension CDSyncItem {
         let currentTime = Int64(Date().timeIntervalSince1970)
         self.lastSyncTime = currentTime
     }
+}
+
+struct UsecaseData {
+    let registrationData: BGSyncRegistrationData
+    let cdSyncItem: CDSyncItem
 }

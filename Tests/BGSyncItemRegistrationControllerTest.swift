@@ -36,13 +36,13 @@ class BGSyncItemRegistrationControllerTest: QuickSpec {
                     
                     expecting(registrationController.registeredUsecases.count).to(equal(0))
                     
-                    let syncItem1 = BGSyncRegistrationData(identifier: "id_1") { compl in
+                    let syncItem1 = BGSyncRegistrationData(identifier: "id_1", configuration: .init(strategy: .everyTime)) { compl in
                         compl(true)
                     }
                     registrationController.registerSyncItem(syncItem1)
                     expecting(registrationController.registeredUsecases.count).to(equal(1))
                     
-                    let syncItem2 = BGSyncRegistrationData(identifier: "id_2") { compl in
+                    let syncItem2 = BGSyncRegistrationData(identifier: "id_2", configuration: .init(strategy: .everyTime)) { compl in
                         compl(true)
                     }
                     registrationController.registerSyncItem(syncItem2)
@@ -60,13 +60,13 @@ class BGSyncItemRegistrationControllerTest: QuickSpec {
                     
                     expecting(registrationController.registeredUsecases.count).to(equal(0))
                     
-                    let syncItem1 = BGSyncRegistrationData(identifier: "id_1") { compl in
+                    let syncItem1 = BGSyncRegistrationData(identifier: "id_1", configuration: .init(strategy: .everyTime)) { compl in
                         compl(true)
                     }
                     registrationController.registerSyncItem(syncItem1)
                     expecting(registrationController.registeredUsecases.count).to(equal(1))
                     
-                    let syncItem2 = BGSyncRegistrationData(identifier: "id_1") { compl in
+                    let syncItem2 = BGSyncRegistrationData(identifier: "id_1", configuration: .init(strategy: .everyTime)) { compl in
                         compl(true)
                     }
                     registrationController.registerSyncItem(syncItem2)
@@ -87,7 +87,7 @@ class BGSyncItemRegistrationControllerTest: QuickSpec {
                     expecting(registrationController.registeredUsecases.count).to(equal(0))
                     
                     let identifier = "id_1"
-                    let syncItem1 = BGSyncRegistrationData(identifier: identifier) { compl in
+                    let syncItem1 = BGSyncRegistrationData(identifier: identifier, configuration: .init(strategy: .everyTime)) { compl in
                         compl(true)
                     }
                     registrationController.registerSyncItem(syncItem1)
@@ -109,7 +109,7 @@ class BGSyncItemRegistrationControllerTest: QuickSpec {
                     expecting(registrationController.registeredUsecases.count).to(equal(0))
                     
                     let identifier = "id_1"
-                    let syncItem1 = BGSyncRegistrationData(identifier: identifier) { compl in
+                    let syncItem1 = BGSyncRegistrationData(identifier: identifier, configuration: .init(strategy: .everyTime)) { compl in
                         compl(true)
                     }
                     registrationController.registerSyncItem(syncItem1)
@@ -132,13 +132,13 @@ class BGSyncItemRegistrationControllerTest: QuickSpec {
                     
                     expecting(registrationController.registeredUsecases.count).to(equal(0))
                     
-                    let syncItem1 = BGSyncRegistrationData(identifier: "id_1") { compl in
+                    let syncItem1 = BGSyncRegistrationData(identifier: "id_1", configuration: .init(strategy: .everyTime)) { compl in
                         compl(true)
                     }
                     registrationController.registerSyncItem(syncItem1)
                     expecting(registrationController.registeredUsecases.count).to(equal(1))
                     
-                    let syncItem2 = BGSyncRegistrationData(identifier: "id_2") { compl in
+                    let syncItem2 = BGSyncRegistrationData(identifier: "id_2", configuration: .init(strategy: .everyTime)) { compl in
                         compl(true)
                     }
                     registrationController.registerSyncItem(syncItem2)

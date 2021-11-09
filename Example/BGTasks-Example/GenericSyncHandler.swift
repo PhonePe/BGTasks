@@ -16,7 +16,7 @@ class GenericSyncHandler {
             BGFrameworkFactory.registrationController().registerSyncItem(
                 BGSyncRegistrationData(
                     identifier: identifier,
-                    configuration: BGSyncRegistrationData.Configuration(), handler: { completion in
+                    configuration: BGSyncRegistrationData.Configuration(strategy: .everyTime), handler: { completion in
                         self.sync(duration: duration, completion: completion)
                     }))
         } else {

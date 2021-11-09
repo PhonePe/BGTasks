@@ -44,5 +44,7 @@ extension Constants.TaskCategory {
 }
 
 func debugLog(_ message: @autoclosure () -> String) {
-//    print(message())
+#if DEBUG
+    print(message())
+#endif
 }

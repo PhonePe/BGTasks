@@ -16,7 +16,7 @@ class Sync1Handler {
             BGFrameworkFactory.registrationController().registerSyncItem(
                 BGSyncRegistrationData(
                     identifier: "id_1",
-                    configuration: BGSyncRegistrationData.Configuration(), handler: { completion in
+                    configuration: BGSyncRegistrationData.Configuration(strategy: .onceADayAnyTime), handler: { completion in
                         self.sync(completion)
                     }))
         }

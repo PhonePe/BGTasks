@@ -54,6 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.performBGTask(force: true, completionHandler: nil)
+        }
+        
         return true
     }
     
@@ -94,18 +98,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("didReceiveRemoteNotification. userInfo: \(userInfo)")
         
+        performBGTask(force: false, completionHandler: completionHandler)
+    }
+    
+    private func performBGTask(force: Bool, completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         var silentPNBGTask: BGTaskForSilentPN?
-        if application.applicationState == .background {
+        if force || UIApplication.shared.applicationState == .background {
             let bgTask = BGTaskForSilentPN()
             BGConfigurationProvider.shared.silentPNReceived(task: bgTask)
             silentPNBGTask = bgTask
         }
         
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 4) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 24) {
             silentPNBGTask?.expirationHandler?()
-            completionHandler(.newData)
+            completionHandler?(.newData)
         }
     }
-    
 }
