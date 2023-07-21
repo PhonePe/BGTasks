@@ -41,7 +41,7 @@ final class TaskScheduler: TaskSchedulerProtocol {
             }
             
             self.bgTaskScheduleWrapper.getPendingTaskRequests { requests in
-                for task in registrationData.permittedIdentifiers {
+                for task in registrationData.permittedIdentifiers.getUnsafeDictionary() {
                     if !requests.contains(where: { $0.identifier == task.value }) {
                         if self.orchestrator.canSchedule(for: task.key, identifier: task.value) {
                             self.schedule(task: task.key, identifier: task.value)

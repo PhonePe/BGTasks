@@ -75,7 +75,7 @@ extension BGFrameworkCentralManager {
             preconditionFailure("Registration data not found")
         }
         
-        registrationData.permittedIdentifiers.forEach { keyValue in
+        registrationData.permittedIdentifiers.getUnsafeDictionary().forEach { keyValue in
             if self.orchestrator.canRegisterTask(identifier: keyValue.value) {
                 let isRegistered = self.bgTaskScheduler.register(forTaskWithIdentifier: keyValue.value,
                                                                  using: nil) { task in
@@ -101,7 +101,7 @@ extension BGFrameworkCentralManager {
             return
         }
         
-        guard let type = registrationData.permittedIdentifiers.first(where: { $0.value == task.identifier })?.key else {
+        guard let type = registrationData.permittedIdentifiers.getUnsafeDictionary().first(where: { $0.value == task.identifier })?.key else {
             assertionFailure("didn't find the element in permittedIdentifiers")
             task.setTaskCompleted(success: false)
             return

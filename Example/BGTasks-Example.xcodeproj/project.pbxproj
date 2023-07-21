@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		274E3BB6E2DC6BC7A8D6DCA2 /* Pods_BGTasks_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A67CBE4480494997C5C996 /* Pods_BGTasks_Example.framework */; };
-		97EA924D7884EC6509DFAF7E /* Pods_BGTasks_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F26BC5FBACA8163A7601E4 /* Pods_BGTasks_ExampleTests.framework */; };
-		B30BC38627393B970052805C /* PriorityQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30BC38527393B970052805C /* PriorityQueueTest.swift */; };
+		64C00F498E01A868C1A59412 /* Pods_BGTasks_ExampleTests_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8852CE5788FBF0D5B7BE6766 /* Pods_BGTasks_ExampleTests_2.framework */; };
 		B315285F268F06E30086095A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315285E268F06E30086095A /* AppDelegate.swift */; };
 		B3152863268F06E30086095A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3152862268F06E30086095A /* ViewController.swift */; };
 		B3152866268F06E30086095A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3152864268F06E30086095A /* Main.storyboard */; };
@@ -19,23 +18,24 @@
 		B31528AF268F09130086095A /* Sync2Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528AB268F09130086095A /* Sync2Handler.swift */; };
 		B31528B0268F09130086095A /* Sync1Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528AC268F09130086095A /* Sync1Handler.swift */; };
 		B31528B1268F09130086095A /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528AD268F09130086095A /* TestUtils.swift */; };
-		B31528DC268F0AF60086095A /* BGSyncItemRegistrationControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528CF268F0AF60086095A /* BGSyncItemRegistrationControllerTest.swift */; };
-		B31528DD268F0AF60086095A /* TestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D0268F0AF60086095A /* TestLogger.swift */; };
-		B31528DE268F0AF60086095A /* BGTaskProcessControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D1268F0AF60086095A /* BGTaskProcessControllerTests.swift */; };
-		B31528DF268F0AF60086095A /* CDHistoryUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D2268F0AF60086095A /* CDHistoryUtilTests.swift */; };
-		B31528E0268F0AF60086095A /* BGTaskOrchestratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D3268F0AF60086095A /* BGTaskOrchestratorTests.swift */; };
-		B31528E1268F0AF60086095A /* BGFrameworkCentralManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D4268F0AF60086095A /* BGFrameworkCentralManagerTests.swift */; };
-		B31528E2268F0AF60086095A /* TaskSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D5268F0AF60086095A /* TaskSchedulerTests.swift */; };
-		B31528E3268F0AF60086095A /* Nimble_DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D7268F0AF60086095A /* Nimble_DSL.swift */; };
-		B31528E4268F0AF60086095A /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D8268F0AF60086095A /* MockCoreDataManager.swift */; };
-		B31528E5268F0AF60086095A /* UtilityClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D9268F0AF60086095A /* UtilityClasses.swift */; };
-		B31528E6268F0AF60086095A /* SenpaiExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DA268F0AF60086095A /* SenpaiExpectation.swift */; };
-		B31528E7268F0AF60086095A /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DB268F0AF60086095A /* MockNotificationCenter.swift */; };
-		B38CDC282731415D007C6B2F /* StrategyEligibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CDC272731415D007C6B2F /* StrategyEligibilityTests.swift */; };
+		B3C135702A6AB59100C875F1 /* TestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D0268F0AF60086095A /* TestLogger.swift */; };
+		B3C135712A6AB59100C875F1 /* BGTaskOrchestratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D3268F0AF60086095A /* BGTaskOrchestratorTests.swift */; };
+		B3C135722A6AB59100C875F1 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DB268F0AF60086095A /* MockNotificationCenter.swift */; };
+		B3C135732A6AB59100C875F1 /* BGSyncItemRegistrationControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528CF268F0AF60086095A /* BGSyncItemRegistrationControllerTest.swift */; };
+		B3C135742A6AB59100C875F1 /* CDHistoryUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D2268F0AF60086095A /* CDHistoryUtilTests.swift */; };
+		B3C135752A6AB59100C875F1 /* SenpaiExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DA268F0AF60086095A /* SenpaiExpectation.swift */; };
+		B3C135762A6AB59100C875F1 /* TaskSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D5268F0AF60086095A /* TaskSchedulerTests.swift */; };
+		B3C135772A6AB59100C875F1 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D8268F0AF60086095A /* MockCoreDataManager.swift */; };
+		B3C135782A6AB59100C875F1 /* PriorityQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30BC38527393B970052805C /* PriorityQueueTest.swift */; };
+		B3C135792A6AB59100C875F1 /* BGFrameworkCentralManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D4268F0AF60086095A /* BGFrameworkCentralManagerTests.swift */; };
+		B3C1357A2A6AB59100C875F1 /* BGTaskProcessControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D1268F0AF60086095A /* BGTaskProcessControllerTests.swift */; };
+		B3C1357B2A6AB59100C875F1 /* StrategyEligibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CDC272731415D007C6B2F /* StrategyEligibilityTests.swift */; };
+		B3C1357C2A6AB59100C875F1 /* Nimble_DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D7268F0AF60086095A /* Nimble_DSL.swift */; };
+		B3C1357D2A6AB59100C875F1 /* UtilityClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D9268F0AF60086095A /* UtilityClasses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B3152872268F06E40086095A /* PBXContainerItemProxy */ = {
+		B3C1356B2A6AB58700C875F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3152853268F06E30086095A /* Project object */;
 			proxyType = 1;
@@ -45,9 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DF5A765D82BCD8A258B7A5C /* Pods-BGTasks-ExampleTests-2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-ExampleTests-2.release.xcconfig"; path = "Target Support Files/Pods-BGTasks-ExampleTests-2/Pods-BGTasks-ExampleTests-2.release.xcconfig"; sourceTree = "<group>"; };
 		1AA10E31469BC12F8FF2FE81 /* Pods-BGTasks-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-ExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-BGTasks-ExampleTests/Pods-BGTasks-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		51F569854B004CA8D5DEFE45 /* Pods-BGTasks-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-Example.debug.xcconfig"; path = "Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5A62BBEC67002EBF8DA4DBE1 /* Pods-BGTasks-ExampleTests-2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-ExampleTests-2.debug.xcconfig"; path = "Target Support Files/Pods-BGTasks-ExampleTests-2/Pods-BGTasks-ExampleTests-2.debug.xcconfig"; sourceTree = "<group>"; };
 		793E1C95F2CA04ECFAD38B1D /* Pods-BGTasks-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-Example.release.xcconfig"; path = "Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example.release.xcconfig"; sourceTree = "<group>"; };
+		8852CE5788FBF0D5B7BE6766 /* Pods_BGTasks_ExampleTests_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGTasks_ExampleTests_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A75CAB90C82922D934209A /* Pods-BGTasks-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-ExampleTests.release.xcconfig"; path = "Target Support Files/Pods-BGTasks-ExampleTests/Pods-BGTasks-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1A67CBE4480494997C5C996 /* Pods_BGTasks_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGTasks_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3009619270F051B0099C8A0 /* BGTasks-Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BGTasks-Example.entitlements"; sourceTree = "<group>"; };
@@ -59,8 +62,6 @@
 		B3152867268F06E40086095A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B315286A268F06E40086095A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B315286C268F06E40086095A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3152871268F06E40086095A /* BGTasks-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BGTasks-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3152877268F06E40086095A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B31528AA268F09130086095A /* GenericSyncHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericSyncHandler.swift; sourceTree = "<group>"; };
 		B31528AB268F09130086095A /* Sync2Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sync2Handler.swift; sourceTree = "<group>"; };
 		B31528AC268F09130086095A /* Sync1Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sync1Handler.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		B31528DA268F0AF60086095A /* SenpaiExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenpaiExpectation.swift; sourceTree = "<group>"; };
 		B31528DB268F0AF60086095A /* MockNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNotificationCenter.swift; sourceTree = "<group>"; };
 		B38CDC272731415D007C6B2F /* StrategyEligibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyEligibilityTests.swift; sourceTree = "<group>"; };
+		B3C135672A6AB58700C875F1 /* BGTasks-ExampleTests-2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BGTasks-ExampleTests-2.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F26BC5FBACA8163A7601E4 /* Pods_BGTasks_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGTasks_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,11 +92,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B315286E268F06E40086095A /* Frameworks */ = {
+		B3C135642A6AB58700C875F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97EA924D7884EC6509DFAF7E /* Pods_BGTasks_ExampleTests.framework in Frameworks */,
+				64C00F498E01A868C1A59412 /* Pods_BGTasks_ExampleTests_2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +110,8 @@
 				793E1C95F2CA04ECFAD38B1D /* Pods-BGTasks-Example.release.xcconfig */,
 				1AA10E31469BC12F8FF2FE81 /* Pods-BGTasks-ExampleTests.debug.xcconfig */,
 				90A75CAB90C82922D934209A /* Pods-BGTasks-ExampleTests.release.xcconfig */,
+				5A62BBEC67002EBF8DA4DBE1 /* Pods-BGTasks-ExampleTests-2.debug.xcconfig */,
+				0DF5A765D82BCD8A258B7A5C /* Pods-BGTasks-ExampleTests-2.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -117,6 +121,7 @@
 			children = (
 				B1A67CBE4480494997C5C996 /* Pods_BGTasks_Example.framework */,
 				D0F26BC5FBACA8163A7601E4 /* Pods_BGTasks_ExampleTests.framework */,
+				8852CE5788FBF0D5B7BE6766 /* Pods_BGTasks_ExampleTests_2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -125,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				B315285D268F06E30086095A /* BGTasks-Example */,
-				B3152874268F06E40086095A /* BGTasks-ExampleTests */,
+				B3C135682A6AB58700C875F1 /* BGTasks-ExampleTests-2 */,
 				B315285C268F06E30086095A /* Products */,
 				352EA2A2C10D354F76F5551F /* Pods */,
 				614EF9B3446CAF9B15A863BD /* Frameworks */,
@@ -136,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				B315285B268F06E30086095A /* BGTasks-Example.app */,
-				B3152871268F06E40086095A /* BGTasks-ExampleTests.xctest */,
+				B3C135672A6AB58700C875F1 /* BGTasks-ExampleTests-2.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,15 +164,6 @@
 			path = "BGTasks-Example";
 			sourceTree = "<group>";
 		};
-		B3152874268F06E40086095A /* BGTasks-ExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				B31528CE268F0AF60086095A /* Tests */,
-				B3152877268F06E40086095A /* Info.plist */,
-			);
-			path = "BGTasks-ExampleTests";
-			sourceTree = "<group>";
-		};
 		B31528CE268F0AF60086095A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,10 +176,8 @@
 				B31528D4268F0AF60086095A /* BGFrameworkCentralManagerTests.swift */,
 				B31528D5268F0AF60086095A /* TaskSchedulerTests.swift */,
 				B38CDC272731415D007C6B2F /* StrategyEligibilityTests.swift */,
-				B31528D6268F0AF60086095A /* Utility */,
 			);
-			name = Tests;
-			path = ../../Tests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		B31528D6268F0AF60086095A /* Utility */ = {
@@ -198,6 +192,15 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		B3C135682A6AB58700C875F1 /* BGTasks-ExampleTests-2 */ = {
+			isa = PBXGroup;
+			children = (
+				B31528D6268F0AF60086095A /* Utility */,
+				B31528CE268F0AF60086095A /* Tests */,
+			);
+			path = "BGTasks-ExampleTests-2";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,7 +212,7 @@
 				B3152857268F06E30086095A /* Sources */,
 				B3152858268F06E30086095A /* Frameworks */,
 				B3152859268F06E30086095A /* Resources */,
-				3EA0EA60833698884774DE56 /* [CP] Embed Pods Frameworks */,
+				E83BD20B1D1F18873E42D077 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,24 +223,24 @@
 			productReference = B315285B268F06E30086095A /* BGTasks-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B3152870268F06E40086095A /* BGTasks-ExampleTests */ = {
+		B3C135662A6AB58700C875F1 /* BGTasks-ExampleTests-2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3152888268F06E40086095A /* Build configuration list for PBXNativeTarget "BGTasks-ExampleTests" */;
+			buildConfigurationList = B3C1356F2A6AB58700C875F1 /* Build configuration list for PBXNativeTarget "BGTasks-ExampleTests-2" */;
 			buildPhases = (
-				F78527F54758D24EBE11E26C /* [CP] Check Pods Manifest.lock */,
-				B315286D268F06E40086095A /* Sources */,
-				B315286E268F06E40086095A /* Frameworks */,
-				B315286F268F06E40086095A /* Resources */,
-				13C4C5429F4B722C05DAAD77 /* [CP] Embed Pods Frameworks */,
+				3E70071964890FBD9312A246 /* [CP] Check Pods Manifest.lock */,
+				B3C135632A6AB58700C875F1 /* Sources */,
+				B3C135642A6AB58700C875F1 /* Frameworks */,
+				B3C135652A6AB58700C875F1 /* Resources */,
+				B6716FA6912DFAF31D614334 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B3152873268F06E40086095A /* PBXTargetDependency */,
+				B3C1356C2A6AB58700C875F1 /* PBXTargetDependency */,
 			);
-			name = "BGTasks-ExampleTests";
-			productName = "BGTasks-ExampleTests";
-			productReference = B3152871268F06E40086095A /* BGTasks-ExampleTests.xctest */;
+			name = "BGTasks-ExampleTests-2";
+			productName = "BGTasks-ExampleTests-2";
+			productReference = B3C135672A6AB58700C875F1 /* BGTasks-ExampleTests-2.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -246,14 +249,14 @@
 		B3152853268F06E30086095A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					B315285A268F06E30086095A = {
 						CreatedOnToolsVersion = 12.5;
 					};
-					B3152870268F06E40086095A = {
-						CreatedOnToolsVersion = 12.5;
+					B3C135662A6AB58700C875F1 = {
+						CreatedOnToolsVersion = 14.3;
 						TestTargetID = B315285A268F06E30086095A;
 					};
 				};
@@ -272,7 +275,7 @@
 			projectRoot = "";
 			targets = (
 				B315285A268F06E30086095A /* BGTasks-Example */,
-				B3152870268F06E40086095A /* BGTasks-ExampleTests */,
+				B3C135662A6AB58700C875F1 /* BGTasks-ExampleTests-2 */,
 			);
 		};
 /* End PBXProject section */
@@ -288,7 +291,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B315286F268F06E40086095A /* Resources */ = {
+		B3C135652A6AB58700C875F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,38 +301,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13C4C5429F4B722C05DAAD77 /* [CP] Embed Pods Frameworks */ = {
+		3E70071964890FBD9312A246 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-ExampleTests/Pods-BGTasks-ExampleTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-ExampleTests/Pods-BGTasks-ExampleTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BGTasks-ExampleTests-2-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BGTasks-ExampleTests/Pods-BGTasks-ExampleTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3EA0EA60833698884774DE56 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3FF48A082E4F862338F1516 /* [CP] Check Pods Manifest.lock */ = {
@@ -354,26 +345,38 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F78527F54758D24EBE11E26C /* [CP] Check Pods Manifest.lock */ = {
+		B6716FA6912DFAF31D614334 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-ExampleTests-2/Pods-BGTasks-ExampleTests-2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BGTasks-ExampleTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-ExampleTests-2/Pods-BGTasks-ExampleTests-2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BGTasks-ExampleTests-2/Pods-BGTasks-ExampleTests-2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E83BD20B1D1F18873E42D077 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -392,34 +395,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B315286D268F06E40086095A /* Sources */ = {
+		B3C135632A6AB58700C875F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B31528E1268F0AF60086095A /* BGFrameworkCentralManagerTests.swift in Sources */,
-				B38CDC282731415D007C6B2F /* StrategyEligibilityTests.swift in Sources */,
-				B31528E7268F0AF60086095A /* MockNotificationCenter.swift in Sources */,
-				B31528E4268F0AF60086095A /* MockCoreDataManager.swift in Sources */,
-				B31528DC268F0AF60086095A /* BGSyncItemRegistrationControllerTest.swift in Sources */,
-				B31528E0268F0AF60086095A /* BGTaskOrchestratorTests.swift in Sources */,
-				B31528E6268F0AF60086095A /* SenpaiExpectation.swift in Sources */,
-				B31528DF268F0AF60086095A /* CDHistoryUtilTests.swift in Sources */,
-				B31528E5268F0AF60086095A /* UtilityClasses.swift in Sources */,
-				B31528E3268F0AF60086095A /* Nimble_DSL.swift in Sources */,
-				B31528E2268F0AF60086095A /* TaskSchedulerTests.swift in Sources */,
-				B30BC38627393B970052805C /* PriorityQueueTest.swift in Sources */,
-				B31528DD268F0AF60086095A /* TestLogger.swift in Sources */,
-				B31528DE268F0AF60086095A /* BGTaskProcessControllerTests.swift in Sources */,
+				B3C1357D2A6AB59100C875F1 /* UtilityClasses.swift in Sources */,
+				B3C135762A6AB59100C875F1 /* TaskSchedulerTests.swift in Sources */,
+				B3C1357B2A6AB59100C875F1 /* StrategyEligibilityTests.swift in Sources */,
+				B3C135772A6AB59100C875F1 /* MockCoreDataManager.swift in Sources */,
+				B3C135712A6AB59100C875F1 /* BGTaskOrchestratorTests.swift in Sources */,
+				B3C135742A6AB59100C875F1 /* CDHistoryUtilTests.swift in Sources */,
+				B3C135722A6AB59100C875F1 /* MockNotificationCenter.swift in Sources */,
+				B3C1357C2A6AB59100C875F1 /* Nimble_DSL.swift in Sources */,
+				B3C135792A6AB59100C875F1 /* BGFrameworkCentralManagerTests.swift in Sources */,
+				B3C135782A6AB59100C875F1 /* PriorityQueueTest.swift in Sources */,
+				B3C135702A6AB59100C875F1 /* TestLogger.swift in Sources */,
+				B3C135752A6AB59100C875F1 /* SenpaiExpectation.swift in Sources */,
+				B3C135732A6AB59100C875F1 /* BGSyncItemRegistrationControllerTest.swift in Sources */,
+				B3C1357A2A6AB59100C875F1 /* BGTaskProcessControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B3152873268F06E40086095A /* PBXTargetDependency */ = {
+		B3C1356C2A6AB58700C875F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B315285A268F06E30086095A /* BGTasks-Example */;
-			targetProxy = B3152872268F06E40086095A /* PBXContainerItemProxy */;
+			targetProxy = B3C1356B2A6AB58700C875F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -494,7 +497,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -549,7 +552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -569,6 +572,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9GW78CXC2W;
 				INFOPLIST_FILE = "BGTasks-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -590,6 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9GW78CXC2W;
 				INFOPLIST_FILE = "BGTasks-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -601,49 +606,43 @@
 			};
 			name = Release;
 		};
-		B3152889268F06E40086095A /* Debug */ = {
+		B3C1356D2A6AB58700C875F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AA10E31469BC12F8FF2FE81 /* Pods-BGTasks-ExampleTests.debug.xcconfig */;
+			baseConfigurationReference = 5A62BBEC67002EBF8DA4DBE1 /* Pods-BGTasks-ExampleTests-2.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9GW78CXC2W;
-				INFOPLIST_FILE = "BGTasks-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shridhar.BGTasks-ExampleTests";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phonePe.BGTasks-ExampleTests-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BGTasks-Example.app/BGTasks-Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BGTasks-Example.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BGTasks-Example";
 			};
 			name = Debug;
 		};
-		B315288A268F06E40086095A /* Release */ = {
+		B3C1356E2A6AB58700C875F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90A75CAB90C82922D934209A /* Pods-BGTasks-ExampleTests.release.xcconfig */;
+			baseConfigurationReference = 0DF5A765D82BCD8A258B7A5C /* Pods-BGTasks-ExampleTests-2.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9GW78CXC2W;
-				INFOPLIST_FILE = "BGTasks-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shridhar.BGTasks-ExampleTests";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phonePe.BGTasks-ExampleTests-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BGTasks-Example.app/BGTasks-Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BGTasks-Example.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BGTasks-Example";
 			};
 			name = Release;
 		};
@@ -668,11 +667,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3152888268F06E40086095A /* Build configuration list for PBXNativeTarget "BGTasks-ExampleTests" */ = {
+		B3C1356F2A6AB58700C875F1 /* Build configuration list for PBXNativeTarget "BGTasks-ExampleTests-2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B3152889268F06E40086095A /* Debug */,
-				B315288A268F06E40086095A /* Release */,
+				B3C1356D2A6AB58700C875F1 /* Debug */,
+				B3C1356E2A6AB58700C875F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

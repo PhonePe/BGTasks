@@ -23,7 +23,7 @@ class BGTaskOrchestratorTests: QuickSpec {
                 TestBundleHelper.permittedIds = []
                 TestBGRefreshStatusAvailability.isAvailable = true
             }
-            
+
             // MARK: - appRefreshTask
             context("appRefreshTask") {
                 it("with requiresNetworkConnectivity true") {
@@ -33,18 +33,18 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: true)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let appRefreshTaskIdentifier = "com.phonepe.appreferesh"
                     TestBundleHelper.permittedIds = [appRefreshTaskIdentifier]
                     let canSchedule = orchestrator.canSchedule(for: .appRefreshTask, identifier: appRefreshTaskIdentifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(true))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: appRefreshTaskIdentifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(true))
                 }
-                
+
                 it("with requiresNetworkConnectivity false") {
                     let item1 = BGSyncRegistrationData(
                         identifier: "item1",
@@ -52,18 +52,18 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: false)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let appRefreshTaskIdentifier = "com.phonepe.appreferesh"
                     TestBundleHelper.permittedIds = [appRefreshTaskIdentifier]
                     let canSchedule = orchestrator.canSchedule(for: .appRefreshTask, identifier: appRefreshTaskIdentifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(false))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: appRefreshTaskIdentifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(true))
                 }
-                
+
                 it("without permittedIdentifiers") {
                     let item1 = BGSyncRegistrationData(
                         identifier: "item1",
@@ -71,19 +71,19 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: false)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let appRefreshTaskIdentifier = "com.phonepe.appreferesh"
                     TestBundleHelper.permittedIds = []
                     let canSchedule = orchestrator.canSchedule(for: .appRefreshTask, identifier: appRefreshTaskIdentifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(false))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: appRefreshTaskIdentifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(false))
                 }
             }
-            
+
             // MARK: - processingTaskWithConnectvityWithExternalPower
             context("processingTaskWithConnectvityWithExternalPower") {
                 it("with requiresNetworkConnectivity true") {
@@ -93,18 +93,18 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: true)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let identifier = "com.phonepe.processing.task"
                     TestBundleHelper.permittedIds = [identifier]
                     let canSchedule = orchestrator.canSchedule(for: .processingTaskWithConnectivityWithExternalPower, identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(true))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(true))
                 }
-                
+
                 it("with requiresNetworkConnectivity false") {
                     let item1 = BGSyncRegistrationData(
                         identifier: "item1",
@@ -112,18 +112,18 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: false)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let identifier = "com.phonepe.processing.task"
                     TestBundleHelper.permittedIds = [identifier]
                     let canSchedule = orchestrator.canSchedule(for: .processingTaskWithConnectivityWithExternalPower, identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(false))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(true))
                 }
-                
+
                 it("without permittedIds") {
                     let item1 = BGSyncRegistrationData(
                         identifier: "item1",
@@ -131,19 +131,19 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: true)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let identifier = "com.phonepe.processing.task"
                     TestBundleHelper.permittedIds = []
                     let canSchedule = orchestrator.canSchedule(for: .processingTaskWithConnectivityWithExternalPower, identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(false))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(false))
                 }
             }
-            
+
             // MARK: - processingTaskWithConnectvityWithoutExternalPower
             context("processingTaskWithConnectvityWithoutExternalPower") {
                 it("with requiresNetworkConnectivity true") {
@@ -153,18 +153,18 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: true)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let identifier = "com.phonepe.processing.task"
                     TestBundleHelper.permittedIds = [identifier]
                     let canSchedule = orchestrator.canSchedule(for: .processingTaskWithConnectivityWithoutExternalPower, identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(true))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(true))
                 }
-                
+
                 it("with requiresNetworkConnectivity false") {
                     let item1 = BGSyncRegistrationData(
                         identifier: "item1",
@@ -172,18 +172,18 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: false)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let identifier = "com.phonepe.processing.task"
                     TestBundleHelper.permittedIds = [identifier]
                     let canSchedule = orchestrator.canSchedule(for: .processingTaskWithConnectivityWithoutExternalPower, identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(false))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(true))
                 }
-                
+
                 it("without permittedIds") {
                     let item1 = BGSyncRegistrationData(
                         identifier: "item1",
@@ -191,19 +191,19 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: true)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let identifier = "com.phonepe.processing.task"
                     TestBundleHelper.permittedIds = []
                     let canSchedule = orchestrator.canSchedule(for: .processingTaskWithConnectivityWithoutExternalPower, identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(false))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(false))
                 }
             }
-            
+
             // MARK: - processingTaskWithoutConnectvity
             context("processingTaskWithoutConnectvity") {
                 it("with requiresNetworkConnectivity true") {
@@ -213,18 +213,18 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: true)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let identifier = "com.phonepe.processing.task"
                     TestBundleHelper.permittedIds = [identifier]
                     let canSchedule = orchestrator.canSchedule(for: .processingTaskWithoutConnectivity, identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(false))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(true))
                 }
-                
+
                 it("with requiresNetworkConnectivity false") {
                     let item1 = BGSyncRegistrationData(
                         identifier: "item1",
@@ -232,14 +232,14 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: false)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let identifier = "com.phonepe.processing.task"
                     TestBundleHelper.permittedIds = [identifier]
                     let canSchedule = orchestrator.canSchedule(for: .processingTaskWithoutConnectivity, identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(true))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(true))
                 }
@@ -251,14 +251,14 @@ class BGTaskOrchestratorTests: QuickSpec {
                                              requiresNetworkConnectivity: true)) { compl in
                         compl(true)
                     }
-                    
+
                     let registeredUsecases = [item1]
                     let orchestrator = self.getBGTaskOrchestrator(registeredUsecases: registeredUsecases)
                     let identifier = "com.phonepe.processing.task"
                     TestBundleHelper.permittedIds = []
                     let canSchedule = orchestrator.canSchedule(for: .processingTaskWithoutConnectivity, identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canSchedule).to(equal(false))
-                    
+
                     let canRegister = BGTaskOrchestrator.canRegisterTask(identifier: identifier, bundle: TestBundleHelper.self)
                     expecting(canRegister).to(equal(false))
                 }
@@ -267,6 +267,11 @@ class BGTaskOrchestratorTests: QuickSpec {
         
         // MARK: - BGRefreshStatusAvailability Tests
         context("BGRefreshStatusAvailability Tests") {
+            beforeEach {
+                TestBundleHelper.permittedIds = []
+                TestBGRefreshStatusAvailability.isAvailable = true
+            }
+
             it("with enabled") {
                 let item1 = BGSyncRegistrationData(
                     identifier: "item1",

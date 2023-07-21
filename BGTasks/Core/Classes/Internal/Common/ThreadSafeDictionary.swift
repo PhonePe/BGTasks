@@ -12,8 +12,8 @@ final class ThreadSafeDictionary<Key: Hashable, Value> {
     private var dictionary: [Key: Value]
     private let queue = DispatchQueue(label: "com.phonepe.thread.safe.dictionary.queue", attributes: .concurrent)
     
-    init() {
-        self.dictionary = [:]
+    init(_ initialValue: [Key: Value] = [:]) {
+        self.dictionary = initialValue
     }
     
     subscript(_ key: Key) -> Value? {
@@ -25,7 +25,7 @@ final class ThreadSafeDictionary<Key: Hashable, Value> {
             return value
         }
         set {
-            queue.sync(flags: .barrier) {
+            queue.async(flags: .barrier) {
                 self.update(key, value: newValue)
             }
         }
@@ -39,5 +39,13 @@ final class ThreadSafeDictionary<Key: Hashable, Value> {
     
     private func update(_ key: Key, value: Value?) {
         self.dictionary[key] = value
+    }
+    
+    func getUnsafeDictionary() -> [Key: Value] {
+        var dict = [Key: Value]()
+        queue.sync {
+            dict = self.dictionary
+        }
+        return dict
     }
 }

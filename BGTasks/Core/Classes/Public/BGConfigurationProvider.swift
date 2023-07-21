@@ -48,7 +48,7 @@ final public class BGConfigurationProvider: BGConfigurationProvidable {
     private init() {
     }
     
-    private var configuration: [ConfigurationType: BGConfigurationProtocol] = [:]
+    private var configuration: ThreadSafeDictionary<ConfigurationType, BGConfigurationProtocol> = .init()
     private var centralManager: BGFrameworkCentralManager?
     private let initializer = BGFrameworkInitializer()
 }
@@ -62,7 +62,7 @@ extension BGConfigurationProvider {
     public struct RegistrationData: BGConfigurationProtocol {
         public let configurationType: ConfigurationType = .registrationData
 
-        public let permittedIdentifiers: [BGTaskSchedulerType: String]
+        let permittedIdentifiers: ThreadSafeDictionary<BGTaskSchedulerType, String>
         
         public let processingTaskScheduleInterval: TimeInterval //Default 2hrs
         public let appRefreshTaskScheduleInterval: TimeInterval //Default 2hrs
@@ -77,7 +77,7 @@ extension BGConfigurationProvider {
                     maxConcurrentSyncCount: Int? = nil,
                     minWaitingPeriodForRegistration: TimeInterval? = nil) {
             
-            self.permittedIdentifiers = permittedIdentifiers
+            self.permittedIdentifiers = ThreadSafeDictionary(permittedIdentifiers)
             
             self.processingTaskScheduleInterval = processingTaskScheduleInterval ?? Self.defaultProcessingTaskScheduleInterval
             self.appRefreshTaskScheduleInterval = appRefreshTaskScheduleInterval ?? Self.defaultAppRefreshTaskScheduleInterval
