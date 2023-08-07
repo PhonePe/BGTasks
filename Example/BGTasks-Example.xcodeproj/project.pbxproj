@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F62E3C39F8EE287BD7CF498 /* Pods_BGTasks_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99390DFE206483E2437DE33D /* Pods_BGTasks_UnitTests.framework */; };
 		274E3BB6E2DC6BC7A8D6DCA2 /* Pods_BGTasks_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A67CBE4480494997C5C996 /* Pods_BGTasks_Example.framework */; };
-		64C00F498E01A868C1A59412 /* Pods_BGTasks_ExampleTests_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8852CE5788FBF0D5B7BE6766 /* Pods_BGTasks_ExampleTests_2.framework */; };
 		B315285F268F06E30086095A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315285E268F06E30086095A /* AppDelegate.swift */; };
 		B3152863268F06E30086095A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3152862268F06E30086095A /* ViewController.swift */; };
 		B3152866268F06E30086095A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3152864268F06E30086095A /* Main.storyboard */; };
@@ -18,24 +18,25 @@
 		B31528AF268F09130086095A /* Sync2Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528AB268F09130086095A /* Sync2Handler.swift */; };
 		B31528B0268F09130086095A /* Sync1Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528AC268F09130086095A /* Sync1Handler.swift */; };
 		B31528B1268F09130086095A /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528AD268F09130086095A /* TestUtils.swift */; };
-		B3C135702A6AB59100C875F1 /* TestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D0268F0AF60086095A /* TestLogger.swift */; };
-		B3C135712A6AB59100C875F1 /* BGTaskOrchestratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D3268F0AF60086095A /* BGTaskOrchestratorTests.swift */; };
-		B3C135722A6AB59100C875F1 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DB268F0AF60086095A /* MockNotificationCenter.swift */; };
-		B3C135732A6AB59100C875F1 /* BGSyncItemRegistrationControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528CF268F0AF60086095A /* BGSyncItemRegistrationControllerTest.swift */; };
-		B3C135742A6AB59100C875F1 /* CDHistoryUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D2268F0AF60086095A /* CDHistoryUtilTests.swift */; };
-		B3C135752A6AB59100C875F1 /* SenpaiExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DA268F0AF60086095A /* SenpaiExpectation.swift */; };
-		B3C135762A6AB59100C875F1 /* TaskSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D5268F0AF60086095A /* TaskSchedulerTests.swift */; };
-		B3C135772A6AB59100C875F1 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D8268F0AF60086095A /* MockCoreDataManager.swift */; };
-		B3C135782A6AB59100C875F1 /* PriorityQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30BC38527393B970052805C /* PriorityQueueTest.swift */; };
-		B3C135792A6AB59100C875F1 /* BGFrameworkCentralManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D4268F0AF60086095A /* BGFrameworkCentralManagerTests.swift */; };
-		B3C1357A2A6AB59100C875F1 /* BGTaskProcessControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D1268F0AF60086095A /* BGTaskProcessControllerTests.swift */; };
-		B3C1357B2A6AB59100C875F1 /* StrategyEligibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CDC272731415D007C6B2F /* StrategyEligibilityTests.swift */; };
-		B3C1357C2A6AB59100C875F1 /* Nimble_DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D7268F0AF60086095A /* Nimble_DSL.swift */; };
-		B3C1357D2A6AB59100C875F1 /* UtilityClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D9268F0AF60086095A /* UtilityClasses.swift */; };
+		B34884DA2A810C2100368634 /* BGTasks_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34884D92A810C2100368634 /* BGTasks_UnitTests.swift */; };
+		B34884E02A810C7300368634 /* BGTaskProcessControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D1268F0AF60086095A /* BGTaskProcessControllerTests.swift */; };
+		B34884E12A810C7300368634 /* BGTaskOrchestratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D3268F0AF60086095A /* BGTaskOrchestratorTests.swift */; };
+		B34884E22A810C7300368634 /* TaskSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D5268F0AF60086095A /* TaskSchedulerTests.swift */; };
+		B34884E32A810C7300368634 /* TestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D0268F0AF60086095A /* TestLogger.swift */; };
+		B34884E42A810C7300368634 /* StrategyEligibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CDC272731415D007C6B2F /* StrategyEligibilityTests.swift */; };
+		B34884E52A810C7300368634 /* CDHistoryUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D2268F0AF60086095A /* CDHistoryUtilTests.swift */; };
+		B34884E62A810C7300368634 /* PriorityQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30BC38527393B970052805C /* PriorityQueueTest.swift */; };
+		B34884E72A810C7300368634 /* BGSyncItemRegistrationControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528CF268F0AF60086095A /* BGSyncItemRegistrationControllerTest.swift */; };
+		B34884E82A810C7300368634 /* BGFrameworkCentralManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D4268F0AF60086095A /* BGFrameworkCentralManagerTests.swift */; };
+		B34884E92A810C7800368634 /* UtilityClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D9268F0AF60086095A /* UtilityClasses.swift */; };
+		B34884EA2A810C7800368634 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DB268F0AF60086095A /* MockNotificationCenter.swift */; };
+		B34884EB2A810C7800368634 /* SenpaiExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DA268F0AF60086095A /* SenpaiExpectation.swift */; };
+		B34884EC2A810C7800368634 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D8268F0AF60086095A /* MockCoreDataManager.swift */; };
+		B34884ED2A810C7800368634 /* Nimble_DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D7268F0AF60086095A /* Nimble_DSL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B3C1356B2A6AB58700C875F1 /* PBXContainerItemProxy */ = {
+		B34884DB2A810C2100368634 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3152853268F06E30086095A /* Project object */;
 			proxyType = 1;
@@ -47,11 +48,13 @@
 /* Begin PBXFileReference section */
 		0DF5A765D82BCD8A258B7A5C /* Pods-BGTasks-ExampleTests-2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-ExampleTests-2.release.xcconfig"; path = "Target Support Files/Pods-BGTasks-ExampleTests-2/Pods-BGTasks-ExampleTests-2.release.xcconfig"; sourceTree = "<group>"; };
 		1AA10E31469BC12F8FF2FE81 /* Pods-BGTasks-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-ExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-BGTasks-ExampleTests/Pods-BGTasks-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F8A99B44D805698E89F4D47 /* Pods-BGTasks-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-UnitTests.release.xcconfig"; path = "Target Support Files/Pods-BGTasks-UnitTests/Pods-BGTasks-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		51F569854B004CA8D5DEFE45 /* Pods-BGTasks-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-Example.debug.xcconfig"; path = "Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5A62BBEC67002EBF8DA4DBE1 /* Pods-BGTasks-ExampleTests-2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-ExampleTests-2.debug.xcconfig"; path = "Target Support Files/Pods-BGTasks-ExampleTests-2/Pods-BGTasks-ExampleTests-2.debug.xcconfig"; sourceTree = "<group>"; };
+		745ED68D168E6476595CF0EA /* Pods-BGTasks-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-UnitTests.debug.xcconfig"; path = "Target Support Files/Pods-BGTasks-UnitTests/Pods-BGTasks-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		793E1C95F2CA04ECFAD38B1D /* Pods-BGTasks-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-Example.release.xcconfig"; path = "Target Support Files/Pods-BGTasks-Example/Pods-BGTasks-Example.release.xcconfig"; sourceTree = "<group>"; };
-		8852CE5788FBF0D5B7BE6766 /* Pods_BGTasks_ExampleTests_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGTasks_ExampleTests_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A75CAB90C82922D934209A /* Pods-BGTasks-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGTasks-ExampleTests.release.xcconfig"; path = "Target Support Files/Pods-BGTasks-ExampleTests/Pods-BGTasks-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		99390DFE206483E2437DE33D /* Pods_BGTasks_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGTasks_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A67CBE4480494997C5C996 /* Pods_BGTasks_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGTasks_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3009619270F051B0099C8A0 /* BGTasks-Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BGTasks-Example.entitlements"; sourceTree = "<group>"; };
 		B30BC38527393B970052805C /* PriorityQueueTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueueTest.swift; sourceTree = "<group>"; };
@@ -78,8 +81,9 @@
 		B31528D9268F0AF60086095A /* UtilityClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityClasses.swift; sourceTree = "<group>"; };
 		B31528DA268F0AF60086095A /* SenpaiExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenpaiExpectation.swift; sourceTree = "<group>"; };
 		B31528DB268F0AF60086095A /* MockNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNotificationCenter.swift; sourceTree = "<group>"; };
+		B34884D72A810C2100368634 /* BGTasks-UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BGTasks-UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34884D92A810C2100368634 /* BGTasks_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTasks_UnitTests.swift; sourceTree = "<group>"; };
 		B38CDC272731415D007C6B2F /* StrategyEligibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyEligibilityTests.swift; sourceTree = "<group>"; };
-		B3C135672A6AB58700C875F1 /* BGTasks-ExampleTests-2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BGTasks-ExampleTests-2.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F26BC5FBACA8163A7601E4 /* Pods_BGTasks_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGTasks_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,11 +96,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3C135642A6AB58700C875F1 /* Frameworks */ = {
+		B34884D42A810C2100368634 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64C00F498E01A868C1A59412 /* Pods_BGTasks_ExampleTests_2.framework in Frameworks */,
+				1F62E3C39F8EE287BD7CF498 /* Pods_BGTasks_UnitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +116,8 @@
 				90A75CAB90C82922D934209A /* Pods-BGTasks-ExampleTests.release.xcconfig */,
 				5A62BBEC67002EBF8DA4DBE1 /* Pods-BGTasks-ExampleTests-2.debug.xcconfig */,
 				0DF5A765D82BCD8A258B7A5C /* Pods-BGTasks-ExampleTests-2.release.xcconfig */,
+				745ED68D168E6476595CF0EA /* Pods-BGTasks-UnitTests.debug.xcconfig */,
+				1F8A99B44D805698E89F4D47 /* Pods-BGTasks-UnitTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -121,7 +127,7 @@
 			children = (
 				B1A67CBE4480494997C5C996 /* Pods_BGTasks_Example.framework */,
 				D0F26BC5FBACA8163A7601E4 /* Pods_BGTasks_ExampleTests.framework */,
-				8852CE5788FBF0D5B7BE6766 /* Pods_BGTasks_ExampleTests_2.framework */,
+				99390DFE206483E2437DE33D /* Pods_BGTasks_UnitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B315285D268F06E30086095A /* BGTasks-Example */,
-				B3C135682A6AB58700C875F1 /* BGTasks-ExampleTests-2 */,
+				B34884D82A810C2100368634 /* BGTasks-UnitTests */,
 				B315285C268F06E30086095A /* Products */,
 				352EA2A2C10D354F76F5551F /* Pods */,
 				614EF9B3446CAF9B15A863BD /* Frameworks */,
@@ -141,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B315285B268F06E30086095A /* BGTasks-Example.app */,
-				B3C135672A6AB58700C875F1 /* BGTasks-ExampleTests-2.xctest */,
+				B34884D72A810C2100368634 /* BGTasks-UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,13 +198,14 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		B3C135682A6AB58700C875F1 /* BGTasks-ExampleTests-2 */ = {
+		B34884D82A810C2100368634 /* BGTasks-UnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				B31528D6268F0AF60086095A /* Utility */,
 				B31528CE268F0AF60086095A /* Tests */,
+				B34884D92A810C2100368634 /* BGTasks_UnitTests.swift */,
 			);
-			path = "BGTasks-ExampleTests-2";
+			path = "BGTasks-UnitTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,24 +230,24 @@
 			productReference = B315285B268F06E30086095A /* BGTasks-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B3C135662A6AB58700C875F1 /* BGTasks-ExampleTests-2 */ = {
+		B34884D62A810C2100368634 /* BGTasks-UnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3C1356F2A6AB58700C875F1 /* Build configuration list for PBXNativeTarget "BGTasks-ExampleTests-2" */;
+			buildConfigurationList = B34884DD2A810C2100368634 /* Build configuration list for PBXNativeTarget "BGTasks-UnitTests" */;
 			buildPhases = (
-				3E70071964890FBD9312A246 /* [CP] Check Pods Manifest.lock */,
-				B3C135632A6AB58700C875F1 /* Sources */,
-				B3C135642A6AB58700C875F1 /* Frameworks */,
-				B3C135652A6AB58700C875F1 /* Resources */,
-				B6716FA6912DFAF31D614334 /* [CP] Embed Pods Frameworks */,
+				C5705FF1CE91A6ACC937DA3E /* [CP] Check Pods Manifest.lock */,
+				B34884D32A810C2100368634 /* Sources */,
+				B34884D42A810C2100368634 /* Frameworks */,
+				B34884D52A810C2100368634 /* Resources */,
+				8FECF93BD5BA90E1D1A7E074 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B3C1356C2A6AB58700C875F1 /* PBXTargetDependency */,
+				B34884DC2A810C2100368634 /* PBXTargetDependency */,
 			);
-			name = "BGTasks-ExampleTests-2";
-			productName = "BGTasks-ExampleTests-2";
-			productReference = B3C135672A6AB58700C875F1 /* BGTasks-ExampleTests-2.xctest */;
+			name = "BGTasks-UnitTests";
+			productName = "BGTasks-UnitTests";
+			productReference = B34884D72A810C2100368634 /* BGTasks-UnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +262,7 @@
 					B315285A268F06E30086095A = {
 						CreatedOnToolsVersion = 12.5;
 					};
-					B3C135662A6AB58700C875F1 = {
+					B34884D62A810C2100368634 = {
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = B315285A268F06E30086095A;
 					};
@@ -275,7 +282,7 @@
 			projectRoot = "";
 			targets = (
 				B315285A268F06E30086095A /* BGTasks-Example */,
-				B3C135662A6AB58700C875F1 /* BGTasks-ExampleTests-2 */,
+				B34884D62A810C2100368634 /* BGTasks-UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -291,7 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3C135652A6AB58700C875F1 /* Resources */ = {
+		B34884D52A810C2100368634 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -301,26 +308,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E70071964890FBD9312A246 /* [CP] Check Pods Manifest.lock */ = {
+		8FECF93BD5BA90E1D1A7E074 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-UnitTests/Pods-BGTasks-UnitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BGTasks-ExampleTests-2-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-UnitTests/Pods-BGTasks-UnitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BGTasks-UnitTests/Pods-BGTasks-UnitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3FF48A082E4F862338F1516 /* [CP] Check Pods Manifest.lock */ = {
@@ -345,21 +347,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6716FA6912DFAF31D614334 /* [CP] Embed Pods Frameworks */ = {
+		C5705FF1CE91A6ACC937DA3E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-ExampleTests-2/Pods-BGTasks-ExampleTests-2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BGTasks-ExampleTests-2/Pods-BGTasks-ExampleTests-2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BGTasks-UnitTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BGTasks-ExampleTests-2/Pods-BGTasks-ExampleTests-2-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E83BD20B1D1F18873E42D077 /* [CP] Embed Pods Frameworks */ = {
@@ -395,34 +402,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3C135632A6AB58700C875F1 /* Sources */ = {
+		B34884D32A810C2100368634 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C1357D2A6AB59100C875F1 /* UtilityClasses.swift in Sources */,
-				B3C135762A6AB59100C875F1 /* TaskSchedulerTests.swift in Sources */,
-				B3C1357B2A6AB59100C875F1 /* StrategyEligibilityTests.swift in Sources */,
-				B3C135772A6AB59100C875F1 /* MockCoreDataManager.swift in Sources */,
-				B3C135712A6AB59100C875F1 /* BGTaskOrchestratorTests.swift in Sources */,
-				B3C135742A6AB59100C875F1 /* CDHistoryUtilTests.swift in Sources */,
-				B3C135722A6AB59100C875F1 /* MockNotificationCenter.swift in Sources */,
-				B3C1357C2A6AB59100C875F1 /* Nimble_DSL.swift in Sources */,
-				B3C135792A6AB59100C875F1 /* BGFrameworkCentralManagerTests.swift in Sources */,
-				B3C135782A6AB59100C875F1 /* PriorityQueueTest.swift in Sources */,
-				B3C135702A6AB59100C875F1 /* TestLogger.swift in Sources */,
-				B3C135752A6AB59100C875F1 /* SenpaiExpectation.swift in Sources */,
-				B3C135732A6AB59100C875F1 /* BGSyncItemRegistrationControllerTest.swift in Sources */,
-				B3C1357A2A6AB59100C875F1 /* BGTaskProcessControllerTests.swift in Sources */,
+				B34884EB2A810C7800368634 /* SenpaiExpectation.swift in Sources */,
+				B34884E72A810C7300368634 /* BGSyncItemRegistrationControllerTest.swift in Sources */,
+				B34884EA2A810C7800368634 /* MockNotificationCenter.swift in Sources */,
+				B34884E82A810C7300368634 /* BGFrameworkCentralManagerTests.swift in Sources */,
+				B34884E52A810C7300368634 /* CDHistoryUtilTests.swift in Sources */,
+				B34884E62A810C7300368634 /* PriorityQueueTest.swift in Sources */,
+				B34884E42A810C7300368634 /* StrategyEligibilityTests.swift in Sources */,
+				B34884E22A810C7300368634 /* TaskSchedulerTests.swift in Sources */,
+				B34884EC2A810C7800368634 /* MockCoreDataManager.swift in Sources */,
+				B34884E12A810C7300368634 /* BGTaskOrchestratorTests.swift in Sources */,
+				B34884DA2A810C2100368634 /* BGTasks_UnitTests.swift in Sources */,
+				B34884E02A810C7300368634 /* BGTaskProcessControllerTests.swift in Sources */,
+				B34884E92A810C7800368634 /* UtilityClasses.swift in Sources */,
+				B34884ED2A810C7800368634 /* Nimble_DSL.swift in Sources */,
+				B34884E32A810C7300368634 /* TestLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B3C1356C2A6AB58700C875F1 /* PBXTargetDependency */ = {
+		B34884DC2A810C2100368634 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B315285A268F06E30086095A /* BGTasks-Example */;
-			targetProxy = B3C1356B2A6AB58700C875F1 /* PBXContainerItemProxy */;
+			targetProxy = B34884DB2A810C2100368634 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -606,9 +614,9 @@
 			};
 			name = Release;
 		};
-		B3C1356D2A6AB58700C875F1 /* Debug */ = {
+		B34884DE2A810C2100368634 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A62BBEC67002EBF8DA4DBE1 /* Pods-BGTasks-ExampleTests-2.debug.xcconfig */;
+			baseConfigurationReference = 745ED68D168E6476595CF0EA /* Pods-BGTasks-UnitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -617,7 +625,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phonePe.BGTasks-ExampleTests-2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phonePe.BGTasks-UnitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -626,9 +634,9 @@
 			};
 			name = Debug;
 		};
-		B3C1356E2A6AB58700C875F1 /* Release */ = {
+		B34884DF2A810C2100368634 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DF5A765D82BCD8A258B7A5C /* Pods-BGTasks-ExampleTests-2.release.xcconfig */;
+			baseConfigurationReference = 1F8A99B44D805698E89F4D47 /* Pods-BGTasks-UnitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -637,7 +645,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phonePe.BGTasks-ExampleTests-2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phonePe.BGTasks-UnitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -667,11 +675,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3C1356F2A6AB58700C875F1 /* Build configuration list for PBXNativeTarget "BGTasks-ExampleTests-2" */ = {
+		B34884DD2A810C2100368634 /* Build configuration list for PBXNativeTarget "BGTasks-UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B3C1356D2A6AB58700C875F1 /* Debug */,
-				B3C1356E2A6AB58700C875F1 /* Release */,
+				B34884DE2A810C2100368634 /* Debug */,
+				B34884DF2A810C2100368634 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

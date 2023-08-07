@@ -40,23 +40,13 @@
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
-            skipped = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3152870268F06E40086095A"
-               BuildableName = "BGTasks-ExampleTests.xctest"
-               BlueprintName = "BGTasks-ExampleTests"
-               ReferencedContainer = "container:BGTasks-Example.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
             skipped = "NO"
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3C135662A6AB58700C875F1"
-               BuildableName = "BGTasks-ExampleTests-2.xctest"
-               BlueprintName = "BGTasks-ExampleTests-2"
+               BlueprintIdentifier = "B34884D62A810C2100368634"
+               BuildableName = "BGTasks-UnitTests.xctest"
+               BlueprintName = "BGTasks-UnitTests"
                ReferencedContainer = "container:BGTasks-Example.xcodeproj">
             </BuildableReference>
          </TestableReference>

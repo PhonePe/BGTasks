@@ -1,7 +1,7 @@
 PODS:
-  - BGTasks (1.0.5):
-    - BGTasks/Core (= 1.0.5)
-  - BGTasks/Core (1.0.5)
+  - BGTasks (1.0.6):
+    - BGTasks/Core (= 1.0.6)
+  - BGTasks/Core (1.0.6)
   - Nimble (9.2.0)
   - Quick (4.0.0)
 
@@ -20,10 +20,10 @@ EXTERNAL SOURCES:
     :path: "../BGTasks.podspec"
 
 SPEC CHECKSUMS:
-  BGTasks: d9ebe0fc46f75bfbbb0078dfed8b165d0ae97a2f
+  BGTasks: cae8d03edbde4a30d1792f866eb26915e397cd12
   Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
 
-PODFILE CHECKSUM: 60cb3bf9b2a7c688296c33e61b22d200ed59b9ce
+PODFILE CHECKSUM: 60363b3b8817d7ccdbfffea825ed74c4085074da
 
 COCOAPODS: 1.11.2

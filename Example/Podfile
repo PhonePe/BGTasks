@@ -6,7 +6,7 @@ target 'BGTasks-Example' do
   use_frameworks!
 
   # Pods for BGTasks-Example
-#  pod 'BGTasks', '1.0.5'
+#  pod 'BGTasks', '1.0.6'
 #  pod 'BGTasks', :git => 'https://github.com/PhonePe/BGTasks'
   pod 'BGTasks', :path => '../BGTasks.podspec'
 
@@ -17,7 +17,7 @@ target 'BGTasks-Example' do
     pod "Quick", '4.0.0'
   end
   
-  target 'BGTasks-ExampleTests-2' do
+  target 'BGTasks-UnitTests' do
     inherit! :search_paths
     # Pods for testing
     pod "Nimble", '9.2.0'

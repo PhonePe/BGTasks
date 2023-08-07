@@ -53,7 +53,6 @@ final class BGTaskProcessController: BGTaskProcessControllerProtocol {
     
     private var tasksWithPriority: [BGSyncRegistrationData] = []
     private var keyValueObs: NSKeyValueObservation?
-    private var completion: (() -> Void)?
     
     private var queue = DispatchQueue(label: "com.bg.framework.task.process.controller")
 }
@@ -76,7 +75,6 @@ extension BGTaskProcessController {
             return
         }
         
-        self.completion = completion
         self.keyValueObs = operationQueue.observe(\.operationCount, options: NSKeyValueObservingOptions.new) { [weak self] _, change in
             debugLog("operationCount changed: \(String(describing: change.newValue))")
             guard let safeSelf = self else {
@@ -85,9 +83,8 @@ extension BGTaskProcessController {
             
             if safeSelf.allTheTasksCompleted() {
                 debugLog("allTheTasksCompleted")
-                let completion = safeSelf.completion
-                safeSelf.stopProcessing() //it'll set completion nil
-                completion?()
+                safeSelf.stopProcessing()
+                completion()
             }
         }
         
@@ -96,8 +93,6 @@ extension BGTaskProcessController {
     
     func stopProcessing() {
         debugLog("stopProcessing")
-        
-        self.completion = nil
         
         self.keyValueObs?.invalidate()
         self.keyValueObs = nil //otherwise app crashes incase this method gets called twice
