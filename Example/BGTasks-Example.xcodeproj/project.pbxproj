@@ -32,7 +32,6 @@
 		B34884EA2A810C7800368634 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DB268F0AF60086095A /* MockNotificationCenter.swift */; };
 		B34884EB2A810C7800368634 /* SenpaiExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528DA268F0AF60086095A /* SenpaiExpectation.swift */; };
 		B34884EC2A810C7800368634 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D8268F0AF60086095A /* MockCoreDataManager.swift */; };
-		B34884ED2A810C7800368634 /* Nimble_DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31528D7268F0AF60086095A /* Nimble_DSL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +75,6 @@
 		B31528D3268F0AF60086095A /* BGTaskOrchestratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGTaskOrchestratorTests.swift; sourceTree = "<group>"; };
 		B31528D4268F0AF60086095A /* BGFrameworkCentralManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGFrameworkCentralManagerTests.swift; sourceTree = "<group>"; };
 		B31528D5268F0AF60086095A /* TaskSchedulerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskSchedulerTests.swift; sourceTree = "<group>"; };
-		B31528D7268F0AF60086095A /* Nimble_DSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nimble_DSL.swift; sourceTree = "<group>"; };
 		B31528D8268F0AF60086095A /* MockCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
 		B31528D9268F0AF60086095A /* UtilityClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityClasses.swift; sourceTree = "<group>"; };
 		B31528DA268F0AF60086095A /* SenpaiExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenpaiExpectation.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 		B31528D6268F0AF60086095A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				B31528D7268F0AF60086095A /* Nimble_DSL.swift */,
 				B31528D8268F0AF60086095A /* MockCoreDataManager.swift */,
 				B31528D9268F0AF60086095A /* UtilityClasses.swift */,
 				B31528DA268F0AF60086095A /* SenpaiExpectation.swift */,
@@ -419,7 +416,6 @@
 				B34884DA2A810C2100368634 /* BGTasks_UnitTests.swift in Sources */,
 				B34884E02A810C7300368634 /* BGTaskProcessControllerTests.swift in Sources */,
 				B34884E92A810C7800368634 /* UtilityClasses.swift in Sources */,
-				B34884ED2A810C7800368634 /* Nimble_DSL.swift in Sources */,
 				B34884E32A810C7300368634 /* TestLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

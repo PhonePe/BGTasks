@@ -1,17 +1,41 @@
 PODS:
-  - BGTasks (1.0.6):
-    - BGTasks/Core (= 1.0.6)
-  - BGTasks/Core (1.0.6)
-  - Nimble (9.2.0)
-  - Quick (4.0.0)
+  - BaseFramework (1.1.0)
+  - BGTasks (1.0.7):
+    - BGTasks/Core (= 1.0.7)
+  - BGTasks/Core (1.0.7)
+  - CommonCodeUtility (1.3.3):
+    - BaseFramework
+    - libwebp
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
+  - Nimble (10.0.0)
+  - Quick (5.0.1)
+  - Senpai (1.0.4):
+    - CommonCodeUtility
+    - Nimble (= 10.0.0)
+    - Quick (= 5.0.1)
 
 DEPENDENCIES:
   - BGTasks (from `../BGTasks.podspec`)
-  - Nimble (= 9.2.0)
-  - Quick (= 4.0.0)
+  - Senpai (= 1.0.4)
 
 SPEC REPOS:
+  "git@gitlab.phonepe.com:iOS/sister-apps-frameworks/ios-sister-apps-pod-specs.git":
+    - BaseFramework
+    - CommonCodeUtility
+    - Senpai
   trunk:
+    - libwebp
     - Nimble
     - Quick
 
@@ -20,10 +44,14 @@ EXTERNAL SOURCES:
     :path: "../BGTasks.podspec"
 
 SPEC CHECKSUMS:
-  BGTasks: cae8d03edbde4a30d1792f866eb26915e397cd12
-  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
-  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  BaseFramework: 74dc176967fa86c57544a21ec7abbd9fadc3ebdb
+  BGTasks: 25ece8de4459c845e624007a727a1ee24f9526f0
+  CommonCodeUtility: 7e4371c3b2d61282849f6757d64f366b741070de
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
+  Senpai: 94c06be9fb3edac400522479ccd8fb5712a9d7f8
 
-PODFILE CHECKSUM: 60363b3b8817d7ccdbfffea825ed74c4085074da
+PODFILE CHECKSUM: ba6b2654036f853f8e4d9cb33f5552a975e5f1fa
 
 COCOAPODS: 1.11.2

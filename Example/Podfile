@@ -1,27 +1,18 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '14.0'
+platform :ios, '14.0'
+
+source 'git@gitlab.phonepe.com:iOS/sister-apps-frameworks/ios-sister-apps-pod-specs.git'
+source 'https://cdn.cocoapods.org/'
 
 target 'BGTasks-Example' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for BGTasks-Example
-#  pod 'BGTasks', '1.0.6'
-#  pod 'BGTasks', :git => 'https://github.com/PhonePe/BGTasks'
   pod 'BGTasks', :path => '../BGTasks.podspec'
-
-  target 'BGTasks-ExampleTests' do
-    inherit! :search_paths
-    # Pods for testing
-    pod "Nimble", '9.2.0'
-    pod "Quick", '4.0.0'
-  end
   
   target 'BGTasks-UnitTests' do
     inherit! :search_paths
-    # Pods for testing
-    pod "Nimble", '9.2.0'
-    pod "Quick", '4.0.0'
+    pod 'Senpai', '1.0.4'
   end
 
 end

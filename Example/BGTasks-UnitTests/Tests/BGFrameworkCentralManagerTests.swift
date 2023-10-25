@@ -6,12 +6,12 @@
 //  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
-import XCTest
 import Nimble
 import Quick
 @testable import BGTasks
 import BackgroundTasks
 import CoreData
+import Senpai
 
 class BGFrameworkCentralManagerTests: QuickSpec {
     

@@ -76,15 +76,17 @@ extension BGTaskProcessController {
         }
         
         self.keyValueObs = operationQueue.observe(\.operationCount, options: NSKeyValueObservingOptions.new) { [weak self] _, change in
-            debugLog("operationCount changed: \(String(describing: change.newValue))")
-            guard let safeSelf = self else {
-                return
-            }
-            
-            if safeSelf.allTheTasksCompleted() {
-                debugLog("allTheTasksCompleted")
-                safeSelf.stopProcessing()
-                completion()
+            self?.queue.async { [weak self] in
+                debugLog("operationCount changed: \(String(describing: change.newValue))")
+                guard let safeSelf = self else {
+                    return
+                }
+                
+                if safeSelf.allTheTasksCompleted() {
+                    debugLog("allTheTasksCompleted")
+                    safeSelf.stopProcessing()
+                    completion()
+                }
             }
         }
         

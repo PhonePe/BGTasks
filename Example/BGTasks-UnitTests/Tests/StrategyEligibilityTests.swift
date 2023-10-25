@@ -10,6 +10,7 @@ import Nimble
 import Quick
 @testable import BGTasks
 import BackgroundTasks
+import Senpai
 
 class StrategyEligibilityTests: QuickSpec {
     

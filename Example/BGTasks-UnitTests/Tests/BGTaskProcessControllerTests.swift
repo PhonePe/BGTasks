@@ -10,6 +10,7 @@ import XCTest
 import Nimble
 import Quick
 @testable import BGTasks
+import Senpai
 
 let testTimeout: TimeInterval = 20
 
